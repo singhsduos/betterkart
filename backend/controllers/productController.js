@@ -74,12 +74,15 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
 // Get all product list 
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
+    const resultPerPage = 5;
+    const productCount = await Product.countDocuments();
     // querying a keyword in your API
-    const apiFeature = new ApiFeatures(Product.find(), req.query).search();
+    const apiFeature = new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage);
     const product = await apiFeature.query;
     res.status(200).json({
         success: true,
-        product
+        product,
+        productCount
     });
 });
 
