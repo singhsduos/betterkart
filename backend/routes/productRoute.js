@@ -3,7 +3,6 @@ const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductD
 
 // call router function from express
 const router = express.Router();
-
 // using router making routes
 
 // Make Get request for products
