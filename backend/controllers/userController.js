@@ -27,13 +27,13 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     // fetch the email and password from body
     const { email, password } = req.body;
 
-    // check if user entered email or password
+    // check if user entered email or password or not
     if (!email || !password) {
         return next(new ErrorHandler("Please Enter Email & Password", 400));
     }
 
     // now find the email and password in your data-base and 
-    // select method is used because we marked false in schema so that no one can see it 
+    // select method is used because we marked false in schema so that no one can see it our user passwords
     const user = await User.findOne({ email }).select("+password");
 
     // if user is not found in our database then handle error
@@ -52,4 +52,17 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 
     sendToken(user, 200, res, "User login successfully");
 
+});
+
+// Logout the User
+exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+        httpOnly: true,
+    });
+
+    res.status(200).json({
+        success: true,
+        message: "Logged Out",
+    });
 });
