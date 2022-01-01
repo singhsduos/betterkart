@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -58,5 +59,16 @@ userSchema.pre("save", async function (next) {
     // and we used 10 character hash value means strong password
     this.password = await bcrypt.hash(this.password, 10);
 });
+
+
+// For JWT Token create own Method for User Schema
+userSchema.methods.getJWTToken = function () {
+    // there should be a secret key otherwise anyone can login in your web and can access as admin
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRE,
+    });
+
+    
+};
 
 module.exports = mongoose.model("User", userSchema); 
