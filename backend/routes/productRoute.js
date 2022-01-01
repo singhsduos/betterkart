@@ -1,6 +1,6 @@
 const express = require("express");
 const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductDetails } = require("../controllers/productController");
-const { isUserAuthenticated } = require("../middleWare/auth");
+const { isUserAuthenticated, authorizedRole } = require("../middleWare/auth");
 
 // call router function from express
 const router = express.Router();
@@ -13,13 +13,13 @@ router.route('/products').get(getAllProducts);
 router.route('/products/:id').get(getProductDetails);
 
 // Make Post request for products
-router.route('/products/new').post(isUserAuthenticated,createProduct);
+router.route('/products/new').post(isUserAuthenticated,authorizedRole("admin"),createProduct);
 
 //  Make a Put request for update a product
-router.route('/products/:id').put(isUserAuthenticated,updateProduct);
+router.route('/products/:id').put(isUserAuthenticated,authorizedRole("admin"),updateProduct);
 
 // Make a Delete request for product
-router.route('/products/:id').delete(isUserAuthenticated,deleteProduct);
+router.route('/products/:id').delete(isUserAuthenticated,authorizedRole("admin"),deleteProduct);
 
 
 module.exports = router;
