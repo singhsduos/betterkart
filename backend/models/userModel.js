@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -42,6 +43,20 @@ const userSchema = new mongoose.Schema({
 
     resetPasswordToken: String,
     resetPasswordExpire: Date
+});
+
+// we are encrypting our passowrd before saving schema
+// we are not using arrow function because "this" keyword not work on this function
+userSchema.pre("save", async function (next) {
+    // we are checking that if password is not modified 
+    // than don't encrypt password again
+    if (!this.isModified("password")) {
+        next();
+    }
+     
+    // if password is created new or used forgot password than modify it
+    // and we used 10 character hash value means strong password
+    this.password = await bcrypt.hash(this.password, 10);
 });
 
 module.exports = mongoose.model("User", userSchema); 
