@@ -78,14 +78,15 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("User not found", 404));
     }
 
-    const resettoken = user.getResetPasswordToken();
+    // Get Password Token
+    const resetToken = user.getResetPasswordToken();
 
     // this is for saving the value in schema of passwordtoken and passwordexpire
-    await user.save({ validateBeforeSave: false});
+    await user.save({ validateBeforeSave: false });
 
     const resetPasswordUrl = `${req.protocol}://${req.get(
         "host"
-    )}/password/reset/${resettoken}`;
+    )}/password/reset/${resetToken}`;
 
     const message = `Your password reset token is here \n\n ${resetPasswordUrl} \n\nIf you have not requested this email than please ignore it.`;
 
@@ -102,19 +103,66 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
             success: true,
             message: `Email sent to ${user.email} successfully`,
         });
-        
+
     } catch (error) {
         // if there is error than we already generated a these below token so it's duty define them as undefined
         user.resetPasswordToken = undefined;
         user.resetPasswordExpire = undefined;
-        console.log(error.message);
- 
+
+
         // so again save these values in schema
         await user.save({ validateBeforeSave: false });
 
         return next(new ErrorHandler(error.message, 500));
 
-    
+
     }
 
+});
+
+//  Reset Password
+exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
+    // creating token hash
+    const resetPasswordToken = crypto
+        .createHash("sha256")
+        .update(req.params.token)
+        .digest("hex");
+ 
+    const user = await User.findOne({
+        resetPasswordToken,
+        resetPasswordExpire: { $gt: Date.now() },
+    });
+
+    if (!user) {
+        return next(
+            new ErrorHandler(
+                "Reset Password Token is invalid or has been expired",
+                400
+            )
+        );
+    }
+
+    if (req.body.password !== req.body.confirmPassword) {
+        return next(new ErrorHandler("Password does not password", 400));
+    }
+    user.password = req.body.password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+
+    // so again save these upper values in schema
+    await user.save();
+
+    sendToken(user, 200, res, "Password changed successfully");
+   
+});
+
+// Get User Detail
+exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
+    const user = await User.findById(req.user.id);
+
+    res.status(200).json({
+        success: true,
+        user,
+    });
 });
