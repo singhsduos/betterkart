@@ -9,12 +9,14 @@ app.use(cookie());
 // IMPORT ROUTES
 const product = require("./routes/productRoute.js");
 const user = require("./routes/userRoute");
+const order = require("./routes/orderRoute");
 
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use("/api/v1", product);
 app.use("/api/v1", user);
+app.use("/api/v1", order);
 
 // Middleware for errors
 app.use(errorMiddleware);
