@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductDetails } = require("../controllers/productController");
+const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductDetails, createProductReview, getProductReviews, deleteReview } = require("../controllers/productController");
 const { isUserAuthenticated, authorizedRole } = require("../middleWare/auth");
 
 // call router function from express
@@ -19,7 +19,17 @@ router.route('/admin/products/new').post(isUserAuthenticated,authorizedRole("adm
 router.route('/admin/products/:id').put(isUserAuthenticated,authorizedRole("admin"),updateProduct);
 
 // Make a Delete request for product
-router.route('/admin/products/:id').delete(isUserAuthenticated,authorizedRole("admin"),deleteProduct);
+router.route('/admin/products/:id').delete(isUserAuthenticated, authorizedRole("admin"), deleteProduct);
+
+// Make Put request for Review
+router.route('/review').put(isUserAuthenticated, createProductReview);
+
+// Make Get Request to see all reviews of Product and 
+// Make Delete Request to delete own review
+router
+    .route("/reviews")
+    .get(getProductReviews)
+    .delete(isUserAuthenticated, deleteReview);
 
 
 module.exports = router;
