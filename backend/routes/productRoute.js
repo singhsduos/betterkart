@@ -13,13 +13,13 @@ router.route('/products').get(getAllProducts);
 router.route('/products/:id').get(getProductDetails);
 
 // Make Post request for products
-router.route('/products/new').post(isUserAuthenticated,authorizedRole("admin"),createProduct);
+router.route('/admin/products/new').post(isUserAuthenticated,authorizedRole("admin"),createProduct);
 
 //  Make a Put request for update a product
-router.route('/products/:id').put(isUserAuthenticated,authorizedRole("admin"),updateProduct);
+router.route('/admin/products/:id').put(isUserAuthenticated,authorizedRole("admin"),updateProduct);
 
 // Make a Delete request for product
-router.route('/products/:id').delete(isUserAuthenticated,authorizedRole("admin"),deleteProduct);
+router.route('/admin/products/:id').delete(isUserAuthenticated,authorizedRole("admin"),deleteProduct);
 
 
 module.exports = router;

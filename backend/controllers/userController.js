@@ -188,3 +188,97 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 
     sendToken(user, 200, res, "Password updated successfully");
 });
+
+
+// Update User Profile
+exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
+ 
+
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email
+    };
+
+    const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
+        new: true,
+        runValidators: true,
+       userFindAndModify: false,
+    });
+
+    res.status(200).json({
+        success: true,
+        message: "Your Profile Update Successfully"
+    });
+    
+});
+
+
+// Admin get all users
+exports.getAllUser = catchAsyncErrors(async (req, res, next) => {
+    const users = await User.find();
+
+    res.status(200).json({
+        success: true,
+        users
+    });
+});
+
+
+// Admin get single user details
+exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+
+
+    if (!user) {
+        return next(new ErrorHandler(`User does not exist with id : ${req.params.id}`));
+    }
+
+    res.status(200).json({
+        success: true,
+        user
+    });
+});
+
+
+//Admin Update Users Profile
+exports.updateUserRole = catchAsyncErrors(async (req, res, next) => {
+
+
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+        role:req.body.role,
+    };
+
+    const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+        new: true,
+        runValidators: true,
+        userFindAndModify: false,
+    });
+
+    res.status(200).json({
+        success: true,
+        message: "Admin Updated User Role Successfully"
+    });
+
+});
+
+
+//Admin Delete Users 
+exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
+
+
+    const user = await User.findById(req.params.id);
+    
+    if (!user) {
+        return next(new ErrorHandler(`User does not exist with id : ${req.params.id}`));
+    }
+
+    await user.remove();
+
+    res.status(200).json({
+        success: true,
+        message: "Admin Removed User Successfully"
+    });
+
+});
