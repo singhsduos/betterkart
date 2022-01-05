@@ -1,0 +1,99 @@
+footer {
+  margin-top: 10vmax;
+  padding: 2vmax;
+  background-color: #222121;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer .leftFooter {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .leftFooter h4 {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1vmax;
+  text-align: center;
+}
+
+footer .leftFooter p {
+  text-align: center;
+  font-size: 1.4vmax;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer .leftFooter img {
+  width: 10vmax;
+  margin: 1vmax;
+  cursor: pointer;
+}
+
+footer .midFooter {
+  width: 60%;
+  text-align: center;
+}
+
+footer .midFooter h1 {
+  font-size: 4vmax;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #eb4034;
+}
+
+footer .midFooter p {
+  max-width: 60%;
+  margin: 1vmax auto;
+}
+
+footer .rightFooter {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .rightFooter h4 {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1.4vmax;
+  text-decoration: underline;
+}
+
+footer .rightFooter .btn_linkedin,
+footer .rightFooter .btn_gitHub,
+footer .rightFooter .btn_twitter {
+  color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+footer .rightFooter .btn_linkedin:hover,
+footer .rightFooter .btn_gitHub:hover,
+footer .rightFooter .btn_twitter:hover {
+  color: #eb4034;
+}
+/*# sourceMappingURL=Footer.css.map */
