@@ -4,20 +4,20 @@ $headingFont_family: 'Roboto',
 Arial,
 sans-serif;
 
-@mixin flexProp($drxn) {
+@mixin flexProp($drxn, $align, $justify) {
     display: flex;
-    align-items: center;
+    align-items: $align;
     flex-direction: $drxn;
+    justify-content: $justify;
 }
 
 
 .banner {
     background-image: $bg_color;
     height: 100vmin;
-    @include flexProp(column);
     text-align: center;
-    justify-content: center;
     color: $mainText_color;
+    @include flexProp(column, center, center);
 
     h1 {
         margin: 5vmax;
@@ -68,4 +68,59 @@ sans-serif;
         max-width: 100%;
     }
 
+}
+
+.homeHeading {
+    text-align: center;
+    font-family: $headingFont_family;
+    font-size: 1.4vmax;
+    width: 20vmax;
+    padding: 1vmax;
+    margin: 5vmax auto;
+    border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+    color: rgba($color: #000000, $alpha: 0.7);
+}
+
+.productCard {
+    width: 15vmax;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+    @include flexProp(column, normal, center);
+
+    img {
+        width: 15vmax;
+    }
+
+    p {
+        font-family: $headingFont_family;
+        font-size: 1.5vmax;
+        font-weight: 500;
+        margin: 1vmax 0.5vmax;
+        margin-bottom: 0;
+    }
+
+    div {
+        margin: 0.5vmax;
+        @include flexProp(row, center, center);
+
+        span {
+            margin: 0.5vmax;
+            font: 300 1vmax $headingFont_family;
+        }
+    }
+
+    >span {
+        margin: 0.5vmax;
+        color: tomato;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font: 600 1.5vmax;
+    }
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+        transform: translateY(-1vmax);
+    }
 }

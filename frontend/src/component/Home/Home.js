@@ -2,10 +2,16 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import MouseIcon from '@mui/icons-material/Mouse';
 import "./SCSS/Home.css";
+import Product from './Product.js';
 
+const product = {
+    name: "T-Shirt",
+    images: [{ url: "https://i.ibb.co/DRST11n/1.webp" }],
+    price: "3000Rs",
+    _id: "Neel",
+}
 
-
-function Home() {
+const Home = () => {
     return (
         <>
             <div className="banner">
@@ -18,7 +24,12 @@ function Home() {
                         <MouseIcon />
                     </Button>
                 </a>
-            
+            </div>
+
+            <h2 className="homeHeading">Featured Products</h2>
+
+            <div className="container" id="container">
+                <Product product={product} />
             </div>
         </>
     );
