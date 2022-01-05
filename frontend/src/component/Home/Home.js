@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import MouseIcon from '@mui/icons-material/Mouse';
+import "./SCSS/Home.css";
 
 
 
@@ -9,11 +10,11 @@ function Home() {
         <>
             <div className="banner">
                 <p>Welcome to BetterKart</p>
-                <h1>Find Amazings Product Below</h1>
+                <h1> FIND AMAZINGS PRODUCTS BELOW</h1>
 
                 <a href="#container">
-                    <Button>
-                        Scroll
+                    <Button className='btn_Scroll'>
+                        <span>Scroll</span>
                         <MouseIcon />
                     </Button>
                 </a>

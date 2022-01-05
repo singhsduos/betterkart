@@ -1,0 +1,71 @@
+$bg_color: linear-gradient(to right, #635dc0, #3027ae);
+$mainText_color: white;
+$headingFont_family: 'Roboto',
+Arial,
+sans-serif;
+
+@mixin flexProp($drxn) {
+    display: flex;
+    align-items: center;
+    flex-direction: $drxn;
+}
+
+
+.banner {
+    background-image: $bg_color;
+    height: 100vmin;
+    @include flexProp(column);
+    text-align: center;
+    justify-content: center;
+    color: $mainText_color;
+
+    h1 {
+        margin: 5vmax;
+        font: 600 2.5vmax $headingFont_family;
+    }
+
+
+    p {
+        font: 300 1.4vmax "Lucida Sans";
+    }
+
+    a {
+        text-decoration: none;
+
+        .btn_Scroll {
+            margin-bottom: 5vmax;
+            cursor: pointer;
+            font: 500 1vmax $headingFont_family;
+            background-color: $mainText_color;
+            border: 1px solid $mainText_color;
+            border-radius: 15px;
+            padding: 1vmax;
+            transition: all 0.5s;
+            width: 9vmax;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0);
+                color: $mainText_color;
+            }
+
+            span {
+                margin: 0rem 1vmax;
+            }
+
+        }
+
+    }
+
+    &::after {
+        content: "";
+        width: 100vw;
+        height: 100vmin;
+        background-color: $mainText_color;
+        position: absolute;
+        top: 0%;
+        left: 0;
+        clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
+        max-width: 100%;
+    }
+
+}

@@ -1,0 +1,69 @@
+.banner {
+  background-image: -webkit-gradient(linear, left top, right top, from(#635dc0), to(#3027ae));
+  background-image: linear-gradient(to right, #635dc0, #3027ae);
+  height: 100vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+.banner h1 {
+  margin: 5vmax;
+  font: 600 2.5vmax "Roboto", Arial, sans-serif;
+}
+
+.banner p {
+  font: 300 1.4vmax "Lucida Sans";
+}
+
+.banner a {
+  text-decoration: none;
+}
+
+.banner a .btn_Scroll {
+  margin-bottom: 5vmax;
+  cursor: pointer;
+  font: 500 1vmax "Roboto", Arial, sans-serif;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 1vmax;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 9vmax;
+}
+
+.banner a .btn_Scroll:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.banner a .btn_Scroll span {
+  margin: 0rem 1vmax;
+}
+
+.banner::after {
+  content: "";
+  width: 100vw;
+  height: 100vmin;
+  background-color: white;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  -webkit-clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
+          clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
+  max-width: 100%;
+}
+/*# sourceMappingURL=Home.css.map */
