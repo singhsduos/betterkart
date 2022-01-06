@@ -74,7 +74,8 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Get all product list 
-exports.getAllProducts = catchAsyncErrors(async (req, res) => {
+exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
+   
     const resultPerPage = 8;
     const productCount = await Product.countDocuments();
     // querying a keyword, filtering the data and changing page with new data in your API
