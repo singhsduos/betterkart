@@ -75,21 +75,26 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
 // Get all product list 
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
-    const resultPerPage = 5;
+    const resultPerPage = 8;
     const productCount = await Product.countDocuments();
     // querying a keyword, filtering the data and changing page with new data in your API
-    const apiFeature = new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage);
-    const product = await apiFeature.query;
+    const apiFeature = new ApiFeatures(Product.find(), req.query)
+        .search()
+        .filter()
+        .pagination(resultPerPage);
+    
+    const products = await apiFeature.query;
+
     res.status(200).json({
         success: true,
-        product,
-        productCount
+        products,
+        productCount,
     });
 });
 
 // Create New Review or Update the Review
 
-exports.createProductReview = catchAsyncErrors(async (req,res,next) => {
+exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     const { rating, comment, productId } = req.body;
     const review = {
         user: req.user._id,
@@ -99,7 +104,7 @@ exports.createProductReview = catchAsyncErrors(async (req,res,next) => {
     }
 
     const product = await Product.findById(productId);
-    
+
     const isReviewed = product.reviews.find((rev) => rev.user.toString() === req.user._id.toString());
 
     if (isReviewed) {
@@ -108,7 +113,7 @@ exports.createProductReview = catchAsyncErrors(async (req,res,next) => {
             if (rev.user.toString() === req.user._id.toString())
                 (rev.rating = rating), (rev.comment = comment);
         });
-        
+
     } else {
         product.reviews.push(review);
         product.numberOfReviews = product.reviews.length;
@@ -121,14 +126,14 @@ exports.createProductReview = catchAsyncErrors(async (req,res,next) => {
         avg += rev.rating;
 
     });
-    
+
     product.ratings = avg / product.reviews.length;
 
 
     await product.save({ validateBeforeSave: false });
 
     res.status(200).json({
-        success:true,
+        success: true,
     })
 });
 
@@ -148,7 +153,7 @@ exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Delete Review
-exports.deleteReview = catchAsyncErrors(async (req, res, next) => { 
+exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
     const product = await Product.findById(req.query.productId);
 
     if (!product) {

@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import MouseIcon from '@mui/icons-material/Mouse';
 import "./SCSS/Home.css";
 import Product from './Product.js';
-
-const product = {
-    name: "T-Shirt",
-    images: [{ url: "https://i.ibb.co/DRST11n/1.webp" }],
-    price: "₹3000",
-    _id: "Neel",
-}
+import MetaData from '../layout/MetaData';
+import { getProduct } from '../../actions/productAction';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Home = () => {
+
+    const dispatch = useDispatch();
+    const { loading, errors, products, productsCount } = useSelector((state) => state.products)
+
+    // calling product Redux
+    useEffect(() => {
+        dispatch(getProduct());
+    }, [dispatch]);
+
     return (
         <>
+            <MetaData title="BetterKart" />
+
             <div className="banner">
                 <p>Welcome to BetterKart</p>
                 <h1> FIND AMAZINGS PRODUCTS BELOW</h1>
@@ -29,16 +36,8 @@ const Home = () => {
             <h2 className="homeHeading">Featured Products</h2>
 
             <div className="container" id="container">
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-                <Product product={product} />
-
+                {products && products.map((product) =>
+                    <Product product={product} />)}
             </div>
         </>
     );

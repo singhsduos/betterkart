@@ -138,6 +138,7 @@
 
 .container .productCard div {
   margin: 0.5vmax 0vmax;
+  margin-left: 0.1vmax;
   width: 17vmax;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,19 +156,20 @@
 }
 
 .container .productCard div .stars {
-  width: 8vmax;
+  width: 10vmax;
 }
 
 .container .productCard div span {
   margin: 0.5vmax 0vmax;
   font: 500 1.2vmax "Roboto", Arial, sans-serif;
   width: 10vmax;
+  text-align: center;
 }
 
 .container .productCard > span {
   margin: 0.5vmax;
   color: tomato;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font: 600 1.1vmax;
 }
 
@@ -186,17 +188,17 @@
     font: 600 1.3vmax "Roboto", Arial, sans-serif;
     border-radius: 8px;
   }
-  .productCard p {
+  .container .productCard p {
     font-size: 1.7vmax;
   }
-  .productCard div .stars {
+  .container .productCard div .stars {
     width: 15vmax;
   }
-  .productCard div span {
+  .container .productCard div span {
     margin: 0 0.5vmax;
     font: 300 1vmax "Roboto", Arial, sans-serif;
   }
-  .productCard > span {
+  .container .productCard > span {
     font-size: 1.5vmax;
   }
 }

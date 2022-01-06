@@ -1,189 +1,175 @@
 $bg_color: linear-gradient(to right, #635dc0, #3027ae);
 $mainText_color: white;
-$headingFont_family: 'Roboto',
-Arial,
-sans-serif;
+$headingFont_family: "Roboto", Arial, sans-serif;
 
 @mixin flexProp($drxn, $align, $justify) {
-    display: flex;
-    align-items: $align;
-    flex-direction: $drxn;
-    justify-content: $justify;
+  display: flex;
+  align-items: $align;
+  flex-direction: $drxn;
+  justify-content: $justify;
 }
 
-
 .banner {
-    background-image: $bg_color;
+  background-image: $bg_color;
+  height: 100vmin;
+  text-align: center;
+  color: $mainText_color;
+  @include flexProp(column, center, center);
+
+  h1 {
+    margin: 5vmax;
+    font: 600 2.5vmax $headingFont_family;
+  }
+
+  p {
+    font: 300 2vmax "Lucida Sans";
+  }
+
+  a {
+    text-decoration: none;
+
+    .btn_Scroll {
+      margin-bottom: 5vmax;
+      cursor: pointer;
+      font: 500 1vmax $headingFont_family;
+      background-color: $mainText_color;
+      border: 1px solid $mainText_color;
+      border-radius: 12px;
+      padding: 1vmax;
+      transition: all 0.5s;
+      width: 9vmax;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+        color: $mainText_color;
+      }
+
+      span {
+        margin: 0rem 1vmax;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 100vw;
     height: 100vmin;
-    text-align: center;
-    color: $mainText_color;
-    @include flexProp(column, center, center);
-
-    h1 {
-        margin: 5vmax;
-        font: 600 2.5vmax $headingFont_family;
-    }
-
-
-    p {
-        font: 300 2vmax "Lucida Sans";
-    }
-
-    a {
-        text-decoration: none;
-
-        .btn_Scroll {
-            margin-bottom: 5vmax;
-            cursor: pointer;
-            font: 500 1vmax $headingFont_family;
-            background-color: $mainText_color;
-            border: 1px solid $mainText_color;
-            border-radius: 12px;
-            padding: 1vmax;
-            transition: all 0.5s;
-            width: 9vmax;
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 0);
-                color: $mainText_color;
-            }
-
-            span {
-                margin: 0rem 1vmax;
-            }
-
-        }
-
-    }
-
-    &::after {
-        content: "";
-        width: 100vw;
-        height: 100vmin;
-        background-color: $mainText_color;
-        position: absolute;
-        top: 0%;
-        left: 0;
-        clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
-        max-width: 100%;
-    }
-
+    background-color: $mainText_color;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
+    max-width: 100%;
+  }
 }
 
 .homeHeading {
-    text-align: center;
-    font-family: $headingFont_family;
-    font-size: 1.4vmax;
-    width: 20vmax;
-    padding: 1vmax;
-    margin: 5vmax auto;
-    border-bottom: 1px solid rgba(21, 21, 21, 0.5);
-    color: rgba($color: #000000, $alpha: 0.7);
+  text-align: center;
+  font-family: $headingFont_family;
+  font-size: 1.4vmax;
+  width: 20vmax;
+  padding: 1vmax;
+  margin: 5vmax auto;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+  color: rgba($color: #000000, $alpha: 0.7);
 }
 
 .container {
-    @include flexProp(row, normal, center);
-    margin: 2vmax auto;
-    width: 80vw;
-    flex-wrap: wrap;
-    max-width: 100%;
+  @include flexProp(row, normal, center);
+  margin: 2vmax auto;
+  width: 80vw;
+  flex-wrap: wrap;
+  max-width: 100%;
 
-    .productCard {
-        width: 20vmax;
-        text-decoration: none;
-        color: rgb(48, 48, 48);
-        margin: 2vmax;
-        transition: all 0.5s;
-        padding-bottom: 0.5vmax;
-        border-radius: 10px;
-        @include flexProp(column, normal, center);
+  .productCard {
+    width: 20vmax;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+    border-radius: 10px;
+    @include flexProp(column, normal, center);
 
-        img {
-            width: 20vmax;
-            border-radius: 10px 10px 0px 0px;
-        }
-
-        p {
-            font-family: $headingFont_family;
-            font-size: 1.5vmax;
-            font-weight: 500;
-            margin: 1vmax 0.5vmax;
-            margin-bottom: 0;
-        }
-
-        div {
-            margin: 0.5vmax 0vmax;
-            width: 17vmax;
-            @include flexProp(row, center, flex-start);
-
-            .stars {
-                width: 8vmax;
-            }
-
-            span {
-                margin: 0.5vmax 0vmax;
-                font: 500 1.2vmax $headingFont_family;
-                width: 10vmax;
-            }
-        }
-
-        >span {
-            margin: 0.5vmax;
-            color: tomato;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font: 600 1.1vmax;
-        }
-
-        &:hover {
-            box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
-            transform: translateY(-1vmax);
-        }
+    img {
+      width: 20vmax;
+      border-radius: 10px 10px 0px 0px;
     }
+
+    p {
+      font-family: $headingFont_family;
+      font-size: 1.5vmax;
+      font-weight: 500;
+      margin: 1vmax 0.5vmax;
+      margin-bottom: 0;
+    }
+
+    div {
+      margin: 0.5vmax 0vmax;
+      margin-left: 0.1vmax;
+      width: 17vmax;
+      @include flexProp(row, center, flex-start);
+
+      .stars {
+        width: 10vmax;
+      }
+
+      span {
+        margin: 0.5vmax 0vmax;
+        font: 500 1.2vmax $headingFont_family;
+        width: 10vmax;
+        text-align: center;
+      }
+    }
+
+    > span {
+      margin: 0.5vmax;
+      color: tomato;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font: 600 1.1vmax;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+      transform: translateY(-1vmax);
+    }
+  }
 }
 
-
-@media screen and (max-width:600px) {
-
-
-    .banner {
-
-        p {
-            font: 400 2.2vmax "Lucida Sans";
-        }
-
-        a {
-
-            .btn_Scroll {
-                font: 600 1.3vmax $headingFont_family;
-                border-radius: 8px;
-            }
-
-        }
-
+@media screen and (max-width: 600px) {
+  .banner {
+    p {
+      font: 400 2.2vmax "Lucida Sans";
     }
 
+    a {
+      .btn_Scroll {
+        font: 600 1.3vmax $headingFont_family;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .container {
     .productCard {
+      p {
+        font-size: 1.7vmax;
+      }
 
-        p {
-            font-size: 1.7vmax;
+      div {
+        .stars {
+          width: 15vmax;
         }
 
-        div {
-
-            .stars {
-                width: 15vmax;
-            }
-
-            span {
-                margin: 0 0.5vmax;
-                font: 300 1vmax $headingFont_family;
-            }
+        span {
+          margin: 0 0.5vmax;
+          font: 300 1vmax $headingFont_family;
         }
+      }
 
-        >span {
-            font-size: 1.5vmax;
-        }
-
+      > span {
+        font-size: 1.5vmax;
+      }
     }
-
+  }
 }
