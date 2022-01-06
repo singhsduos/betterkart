@@ -18,8 +18,8 @@ function Product({product}) {
             <img src={product.images[0].url} alt='{product.name}' />
             <p>{product.name}</p>
             <div>
-                <ReactStar {...options} />
-                <span>( 256 review )</span>
+                <ReactStar {...options} classNames="stars"/>
+                <span>(256 Reviews)</span>
             </div>
             <span>{ product.price }</span>
         

@@ -7,7 +7,7 @@ import Product from './Product.js';
 const product = {
     name: "T-Shirt",
     images: [{ url: "https://i.ibb.co/DRST11n/1.webp" }],
-    price: "3000Rs",
+    price: "₹3000",
     _id: "Neel",
 }
 
@@ -30,6 +30,15 @@ const Home = () => {
 
             <div className="container" id="container">
                 <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+                <Product product={product} />
+
             </div>
         </>
     );

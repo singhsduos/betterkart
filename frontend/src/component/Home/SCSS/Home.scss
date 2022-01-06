@@ -26,7 +26,7 @@ sans-serif;
 
 
     p {
-        font: 300 1.4vmax "Lucida Sans";
+        font: 300 2vmax "Lucida Sans";
     }
 
     a {
@@ -38,7 +38,7 @@ sans-serif;
             font: 500 1vmax $headingFont_family;
             background-color: $mainText_color;
             border: 1px solid $mainText_color;
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 1vmax;
             transition: all 0.5s;
             width: 9vmax;
@@ -81,46 +81,109 @@ sans-serif;
     color: rgba($color: #000000, $alpha: 0.7);
 }
 
-.productCard {
-    width: 15vmax;
-    text-decoration: none;
-    color: rgb(48, 48, 48);
-    margin: 2vmax;
-    transition: all 0.5s;
-    padding-bottom: 0.5vmax;
-    @include flexProp(column, normal, center);
+.container {
+    @include flexProp(row, normal, center);
+    margin: 2vmax auto;
+    width: 80vw;
+    flex-wrap: wrap;
+    max-width: 100%;
 
-    img {
-        width: 15vmax;
-    }
+    .productCard {
+        width: 20vmax;
+        text-decoration: none;
+        color: rgb(48, 48, 48);
+        margin: 2vmax;
+        transition: all 0.5s;
+        padding-bottom: 0.5vmax;
+        border-radius: 10px;
+        @include flexProp(column, normal, center);
 
-    p {
-        font-family: $headingFont_family;
-        font-size: 1.5vmax;
-        font-weight: 500;
-        margin: 1vmax 0.5vmax;
-        margin-bottom: 0;
-    }
+        img {
+            width: 20vmax;
+            border-radius: 10px 10px 0px 0px;
+        }
 
-    div {
-        margin: 0.5vmax;
-        @include flexProp(row, center, center);
+        p {
+            font-family: $headingFont_family;
+            font-size: 1.5vmax;
+            font-weight: 500;
+            margin: 1vmax 0.5vmax;
+            margin-bottom: 0;
+        }
 
-        span {
+        div {
+            margin: 0.5vmax 0vmax;
+            width: 17vmax;
+            @include flexProp(row, center, flex-start);
+
+            .stars {
+                width: 8vmax;
+            }
+
+            span {
+                margin: 0.5vmax 0vmax;
+                font: 500 1.2vmax $headingFont_family;
+                width: 10vmax;
+            }
+        }
+
+        >span {
             margin: 0.5vmax;
-            font: 300 1vmax $headingFont_family;
+            color: tomato;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font: 600 1.1vmax;
+        }
+
+        &:hover {
+            box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+            transform: translateY(-1vmax);
         }
     }
+}
 
-    >span {
-        margin: 0.5vmax;
-        color: tomato;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font: 600 1.5vmax;
+
+@media screen and (max-width:600px) {
+
+
+    .banner {
+
+        p {
+            font: 400 2.2vmax "Lucida Sans";
+        }
+
+        a {
+
+            .btn_Scroll {
+                font: 600 1.3vmax $headingFont_family;
+                border-radius: 8px;
+            }
+
+        }
+
     }
 
-    &:hover {
-        box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
-        transform: translateY(-1vmax);
+    .productCard {
+
+        p {
+            font-size: 1.7vmax;
+        }
+
+        div {
+
+            .stars {
+                width: 15vmax;
+            }
+
+            span {
+                margin: 0 0.5vmax;
+                font: 300 1vmax $headingFont_family;
+            }
+        }
+
+        >span {
+            font-size: 1.5vmax;
+        }
+
     }
+
 }
