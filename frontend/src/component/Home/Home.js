@@ -6,6 +6,7 @@ import Product from './Product.js';
 import MetaData from '../layout/MetaData';
 import { getProduct } from '../../actions/productAction';
 import { useSelector, useDispatch } from 'react-redux';
+import Loader from '../layout/Loader/Loader.js';
 
 const Home = () => {
 
@@ -19,26 +20,28 @@ const Home = () => {
 
     return (
         <>
-            <MetaData title="BetterKart" />
+            {loading ? <Loader/> :
+                <>
+                    <MetaData title="BetterKart" />
+                    <div className="banner">
+                        <p>Welcome to BetterKart</p>
+                        <h1> FIND AMAZINGS PRODUCTS BELOW</h1>
 
-            <div className="banner">
-                <p>Welcome to BetterKart</p>
-                <h1> FIND AMAZINGS PRODUCTS BELOW</h1>
+                        <a href="#container">
+                            <Button className='btn_Scroll'>
+                                <span>Scroll</span>
+                                <MouseIcon />
+                            </Button>
+                        </a>
+                    </div>
 
-                <a href="#container">
-                    <Button className='btn_Scroll'>
-                        <span>Scroll</span>
-                        <MouseIcon />
-                    </Button>
-                </a>
-            </div>
+                    <h2 className="homeHeading">Featured Products</h2>
 
-            <h2 className="homeHeading">Featured Products</h2>
-
-            <div className="container" id="container">
-                {products && products.map((product) =>
-                    <Product product={product} />)}
-            </div>
+                    <div className="container" id="container">
+                        {products && products.map((product) =>
+                            <Product key={product._id} product={product} />)}
+                    </div>
+                </>}
         </>
     );
 }

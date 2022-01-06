@@ -21,7 +21,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-      <Route exact path="/" element={<Home/>} />
+        <Route exact path="/" element={<Home />} />
       </Routes>
       <Footer />
     </Router>
