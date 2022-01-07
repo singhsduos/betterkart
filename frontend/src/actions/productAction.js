@@ -1,10 +1,9 @@
 import axios from "axios";
 
 import {
-    ALL_PRODUCT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
-    CLEAR_ERRORS,
+    ALL_PRODUCT_FAIL,
     // ADMIN_PRODUCT_REQUEST,
     // ADMIN_PRODUCT_SUCCESS,
     // ADMIN_PRODUCT_FAIL,
@@ -20,9 +19,9 @@ import {
     // DELETE_PRODUCT_SUCCESS,
     // DELETE_PRODUCT_FAIL,
     // DELETE_PRODUCT_RESET,
-    // PRODUCT_DETAILS_REQUEST,
-    // PRODUCT_DETAILS_FAIL,
-    // PRODUCT_DETAILS_SUCCESS,
+    PRODUCT_DETAILS_REQUEST,
+    PRODUCT_DETAILS_SUCCESS,
+    PRODUCT_DETAILS_FAIL,
     // NEW_REVIEW_REQUEST,
     // NEW_REVIEW_SUCCESS,
     // NEW_REVIEW_FAIL,
@@ -34,7 +33,8 @@ import {
     // DELETE_REVIEW_SUCCESS,
     // DELETE_REVIEW_FAIL,
     // DELETE_REVIEW_RESET,
-    // CLEAR_ERRORS,
+    CLEAR_ERRORS,
+
 } from "../constants/productConstants";
 
 
@@ -57,6 +57,31 @@ export const getProduct = () => async (dispatch) => {
     catch (err) {
         dispatch({
             type: ALL_PRODUCT_FAIL,
+            payload: err.response.data.message,
+        })
+    }
+}
+
+
+export const getProductDetails = (id) => async (dispatch) => {
+    try {
+
+        dispatch({
+            type: PRODUCT_DETAILS_REQUEST,
+        });
+
+        let link = `/api/v1/product/${id}`;
+
+        const { data } = await axios.get(link);
+
+        dispatch({
+            type: PRODUCT_DETAILS_SUCCESS,
+            payload: data,
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: PRODUCT_DETAILS_FAIL,
             payload: err.response.data.message,
         })
     }
