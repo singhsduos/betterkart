@@ -10,20 +10,94 @@
 
 .container {
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0 5vmax;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: normal;
-      -ms-flex-align: normal;
-          align-items: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.paginationBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6vmax;
+}
+
+.paginationBox .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.paginationBox .pagination .page-item {
+  background-color: white;
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  padding: 1vmax 1.5vmax;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.paginationBox .pagination .page-item:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.paginationBox .pagination .page-item:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.paginationBox .pagination .page-item .page-link {
+  text-decoration: none;
+  color: #505050;
+  font: 400 1vmax "Roboto";
+}
+
+.paginationBox .pagination .page-item:hover {
+  background-color: #e6e6e6;
+}
+
+.paginationBox .pagination .page-item:hover .page-link {
+  color: #505050;
+}
+
+.paginationBox .pagination .pageItemActive {
+  background-color: tomato;
+}
+
+.paginationBox .pagination .pageItemActive .pageLinkActive {
+  color: white;
 }
 /*# sourceMappingURL=Product.css.map */

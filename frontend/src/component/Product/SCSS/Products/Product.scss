@@ -24,3 +24,50 @@
   padding: 0 5vmax;
   @include flexProp(row, normal, center);
 }
+
+.paginationBox {
+  @include flexProp(row, normal, center);
+  margin: 6vmax;
+
+  .pagination {
+    @include flexProp(row, normal, center);
+    padding: 0;
+
+    .page-item {
+      background-color: rgb(255, 255, 255);
+      list-style: none;
+      border: 1px solid rgba(0, 0, 0, 0.178);
+      padding: 1vmax 1.5vmax;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+      .page-link {
+        text-decoration: none;
+        @include colorFont(rgb(80, 80, 80), 400 1vmax "Roboto");
+      }
+
+      &:hover {
+        background-color: rgb(230, 230, 230);
+        .page-link {
+          color: rgb(80, 80, 80);
+        }
+      }
+    }
+
+    .pageItemActive {
+      background-color: tomato;
+
+      .pageLinkActive{
+        color: white;
+      }
+    }
+  }
+}
