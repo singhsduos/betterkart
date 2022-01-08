@@ -1,0 +1,58 @@
+@mixin flexProp($drxn, $align, $justify) {
+  display: flex;
+  flex-direction: $drxn;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin colorFont($color, $font) {
+  color: $color;
+  font: $font;
+}
+
+@mixin inputProp(
+  $border,
+  $padding,
+  $width,
+  $outline,
+  $border-radius,
+  $box-sizing,
+  $height
+) {
+  border: $border;
+  padding: $padding;
+  width: $width;
+  outline: $outline;
+  border-radius: $border-radius;
+  box-sizing: $box-sizing;
+  height: $height;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+}
+
+.searchBox {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  background-color: rgb(231, 231, 231);
+  position: fixed;
+  top: 0%;
+  left: 0;
+  @include flexProp(row, center, center);
+
+  input[type="text"] {
+    @include inputProp(none, 1vmax 2vmax, 50%, none, 0%, border-box, 8%);
+    @include colorFont(rgba(0, 0, 0, 0.67), 300 1.1vmax cursive);
+  }
+
+  input[type="submit"] {
+    background-color: tomato;
+    cursor: pointer;
+    transition: all 0.5s;
+    @include colorFont(white, 300 1.1vmax "Roboto");
+    @include inputProp(none, 1vmax, 10%, none, 0%, border-box, 8%);
+
+      &:hover {
+          background-color: rgba(224, 68, 41, 0.877);
+      }
+  }
+}

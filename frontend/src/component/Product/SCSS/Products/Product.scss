@@ -1,0 +1,26 @@
+@mixin flexProp($drxn, $align, $justify) {
+  display: flex;
+  flex-direction: $drxn;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin colorFont($color, $font) {
+  color: $color;
+  font: $font;
+}
+
+.productsHeading {
+  margin: 2vmax auto;
+  width: 15vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  padding: 2vmax;
+  text-align: center;
+  @include colorFont(rgba(0, 0, 0, 0.678), 500 1.5vmax "Roboto");
+}
+
+.container {
+  flex-wrap: wrap;
+  padding: 0 5vmax;
+  @include flexProp(row, normal, center);
+}

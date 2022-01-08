@@ -33,7 +33,7 @@
 }
 
 body {
-  background-color: rgb(214, 214, 214);
+  background-color: white;
 }
 
 .ProductDetails {
@@ -65,7 +65,7 @@ body {
     }
 
     p {
-      @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax "cursive");
+      @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax cursive);
     }
   }
 
@@ -79,7 +79,7 @@ body {
     @include flexProp(row, center, flex-start);
 
     span {
-      @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax "cursive");
+      @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax cursive);
     }
   }
 
@@ -202,7 +202,7 @@ body {
   }
 
   span {
-    @include colorFont(rgb(0, 0, 0, 0.863), 500 0.7vmax "cursive");
+    @include colorFont(rgba(0, 0, 0, 0.863), 500 0.7vmax cursive);
   }
 }
 

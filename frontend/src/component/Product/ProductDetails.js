@@ -5,11 +5,11 @@ import { clearErrors, getProductDetails } from '../../actions/productAction';
 import { useAlert } from "react-alert";
 import { useParams } from "react-router-dom";
 import ReactStar from "react-rating-stars-component";
-import './SCSS/ProductDetails.css';
+import './SCSS/ProductDetails/ProductDetails.css';
 import ReviewCard from './ReviewCard.js';
 import Loader from '../layout/Loader/Loader.js';
 
-const ProductDetails = ({ match }) => {
+const ProductDetails = () => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -46,7 +46,7 @@ const ProductDetails = ({ match }) => {
                         <Carousel>
                             {product.images &&
                                 product.images.map((item, i) => (
-                                    <img className='CarouselImage' src={item.url} key={item.url} alt={`${i} Slide`} />
+                                    <img className='CarouselImage' src={item.url} key={i} alt={`${i} Slide`} />
                                 ))
                             }
                         </Carousel>
@@ -69,7 +69,7 @@ const ProductDetails = ({ match }) => {
                             <div className="detailsBlock-3-1">
                                 <div className="detailsBlock-3-1-1">
                                     <button>-</button>
-                                    <input type="number" value="1" />
+                                    <input type="number" value={product.stock} />
                                     <button>+</button>
                                 </div>
                                 <button>Add to Cart</button>
@@ -78,8 +78,8 @@ const ProductDetails = ({ match }) => {
 
                             <p>
                                 Status:
-                                <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
-                                    {product.Stock < 1 ? "OutOfStock" : "InStock"}
+                                <b className={product.stock < 1 ? "redColor" : "greenColor"}>
+                                    {product.stock < 1 ? "OutOfStock" : "InStock"}
                                 </b>
                             </p>
                         </div>
@@ -99,7 +99,7 @@ const ProductDetails = ({ match }) => {
                 {
                     product.reviews && product.reviews[0] ? (
                         <div className="reviews">
-                            {product.reviews && product.reviews.map((review) => <ReviewCard review={review} />)}
+                            {product.reviews && product.reviews.map((review,i) => <ReviewCard review={review} key={i} />)}
                         </div>
                     ) : (<p className="noReviews">No Reviews Yet</p>)
                 }

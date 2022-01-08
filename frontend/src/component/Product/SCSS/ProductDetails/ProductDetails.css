@@ -1,5 +1,5 @@
 body {
-  background-color: #d6d6d6;
+  background-color: white;
 }
 
 .ProductDetails {
@@ -7,47 +7,47 @@ body {
   max-width: 100%;
   padding: 6vmax;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: normal;
-  -ms-flex-align: normal;
-  align-items: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
   -webkit-box-pack: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
 }
 
 .ProductDetails > div {
   width: 100%;
   padding: 2vmax;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .ProductDetails div:last-child {
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .ProductDetails .CarouselImage {
@@ -61,7 +61,7 @@ body {
 
 .ProductDetails .detailsBlock-1 p {
   color: rgba(54, 54, 54, 0.782);
-  font: 200 0.8vmax "cursive";
+  font: 200 0.8vmax cursive;
 }
 
 .ProductDetails .detailsBlock-2 {
@@ -74,19 +74,19 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .ProductDetails .detailsBlock-2 span {
   color: rgba(54, 54, 54, 0.782);
-  font: 200 0.8vmax "cursive";
+  font: 200 0.8vmax cursive;
 }
 
 .ProductDetails .detailsBlock-3 {
@@ -114,14 +114,14 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: normal;
-  -ms-flex-pack: normal;
-  justify-content: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
 }
 
 .ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 {
@@ -130,14 +130,14 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 button {
@@ -153,11 +153,7 @@ body {
   transition: all 0.5s;
 }
 
-.ProductDetails
-  .detailsBlock-3
-  .detailsBlock-3-1
-  .detailsBlock-3-1-1
-  button:hover {
+.ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 button:hover {
   background-color: rgba(0, 0, 0, 0.767);
 }
 
@@ -218,7 +214,7 @@ body {
 .ProductDetails .submitReview:hover {
   background-color: #d6543d;
   -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .reviewsHeading {
@@ -234,10 +230,10 @@ body {
 
 .reviewCard {
   -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
+      -ms-flex: none;
+          flex: none;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
   border: 1px solid rgba(56, 56, 56, 0.116);
   width: 30vmax;
   display: -webkit-box;
@@ -245,14 +241,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 1vmax auto;
   padding: 3vmax;
 }
@@ -263,26 +259,32 @@ body {
 
 .reviewCard p {
   color: rgba(0, 0, 0, 0.863);
-  font: 500 1.5vmax "Roboto";
+  font: 600 0.9vmax "Roboto";
 }
 
 .reviewCard span {
-  color: black;
-  font: 500 1.5vmax "Roboto";
+  color: rgba(0, 0, 0, 0.863);
+  font: 500 0.7vmax cursive;
+}
+
+.noReviews {
+  color: rgba(0, 0, 0, 0.589);
+  font: 500 1.3vmax "Gill Sans";
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
   .ProductDetails {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: unset;
   }
   .ProductDetails div:last-child {
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .ProductDetails .detailsBlock-1 h2 {
     font-size: 2.8vmax;
@@ -295,8 +297,8 @@ body {
   }
   .ProductDetails .detailsBlock-2 {
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .ProductDetails .detailsBlock-2 span {
     font-size: 1.5vmax;
@@ -313,8 +315,8 @@ body {
   .ProductDetails .detailsBlock-3 .detailsBlock-3-1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .ProductDetails .detailsBlock-3 .detailsBlock-3-1 button:last-child {
     font: 500 1.7vmax "Roboto";
