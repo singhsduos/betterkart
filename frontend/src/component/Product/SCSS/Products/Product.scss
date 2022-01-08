@@ -25,6 +25,13 @@
   @include flexProp(row, normal, center);
 }
 
+.filterBox{
+  width: 10vmax;
+  position: absolute;
+  top: 10vmax;
+  left: 4vmax;
+}
+
 .paginationBox {
   @include flexProp(row, normal, center);
   margin: 6vmax;
