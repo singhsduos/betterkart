@@ -8,6 +8,7 @@ import ReactStar from "react-rating-stars-component";
 import './SCSS/ProductDetails/ProductDetails.css';
 import ReviewCard from './ReviewCard.js';
 import Loader from '../layout/Loader/Loader.js';
+import MetaData from "../layout/MetaData";
 
 const ProductDetails = () => {
 
@@ -41,6 +42,7 @@ const ProductDetails = () => {
     return (
         <>
             {loading ? <Loader /> : (<>
+                <MetaData title={`${product.name} -- BetterKart`} />
                 <div className='ProductDetails'>
                     <div>
                         <Carousel>

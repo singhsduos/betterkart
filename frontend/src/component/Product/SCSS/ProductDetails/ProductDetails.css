@@ -273,6 +273,13 @@ body {
   text-align: center;
 }
 
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+
+*/
 @media screen and (max-width: 600px) {
   .ProductDetails {
     -webkit-box-orient: vertical;

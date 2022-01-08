@@ -12,6 +12,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0 5vmax;
+  min-height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,6 +33,36 @@
   position: absolute;
   top: 10vmax;
   left: 4vmax;
+}
+
+.filterBox .categoryBox {
+  padding: 0%;
+}
+
+.filterBox .categoryBox .category-link {
+  list-style: none;
+  margin: 0.4vmax;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: rgba(0, 0, 0, 0.61);
+  font: 400 1vmax "Roboto";
+}
+
+.filterBox .categoryBox .category-link:hover {
+  color: tomato;
+}
+
+.filterBox .MuiTypography-body1 {
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
+}
+
+.filterBox fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  padding: 0 1vmax;
+  margin-top: 1vmax;
+  margin-bottom: 1vmax;
 }
 
 .paginationBox {
@@ -89,7 +120,7 @@
 .paginationBox .pagination .page-item .page-link {
   text-decoration: none;
   color: #505050;
-  font: 400 1vmax "Roboto";
+  font: 400 1.3vmax "Roboto";
 }
 
 .paginationBox .pagination .page-item:hover {
@@ -106,5 +137,25 @@
 
 .paginationBox .pagination .pageItemActive .pageLinkActive {
   color: white;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+@media screen and (max-width: 600px) {
+  .filterBox {
+    width: 20vmax;
+    position: static;
+    margin: auto;
+  }
+  .paginationBox .pagination .page-item .page-link {
+    font: 300 1.7vmax "Roboto";
+  }
+  .filterBox .categoryBox .category-link {
+    font: 400 1.8vmax "Roboto";
+  }
 }
 /*# sourceMappingURL=Product.css.map */
