@@ -60,12 +60,12 @@ export const userReducer = (state = { user: {} }, action) => {
                 user: action.payload,
             };
 
-        // case LOGOUT_SUCCESS:
-        //     return {
-        //         loading: false,
-        //         user: null,
-        //         isAuthenticated: false,
-        //     };
+        case LOGOUT_SUCCESS:
+            return {
+                loading: false,
+                user: null,
+                isAuthenticated: false,
+            };
         case LOGIN_FAIL:
         case REGISTER_USER_FAIL:
             return {
@@ -84,12 +84,12 @@ export const userReducer = (state = { user: {} }, action) => {
                 error: action.payload,
             };
 
-        // case LOGOUT_FAIL:
-        //     return {
-        //         ...state,
-        //         loading: false,
-        //         error: action.payload,
-        //     };
+        case LOGOUT_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
 
         case CLEAR_ERRORS:
             return {

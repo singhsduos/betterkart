@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=Header.css.map */
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top: 3vmax;
+}
+
+.speedDial .speedDialIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+
+.speedDial .speedDialBtns:hover {
+  color: tomato;
+}
+/*# sourceMappingURL=Header.css.map */
