@@ -1,0 +1,294 @@
+.LoginSignUpContainer {
+  max-width: 100%;
+  background-color: #e7e7e7;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.LoginSignUpContainer .LoginSignUpBox {
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  width: 25vw;
+  height: 70vh;
+}
+
+.LoginSignUpContainer .LoginSignUpBox .login_signUp_toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  height: 3vmax;
+}
+
+.LoginSignUpContainer .LoginSignUpBox .login_signUp_toggle p {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgba(0, 0, 0, 0.678);
+  font: 300 1vmax "Roboto";
+}
+
+.LoginSignUpContainer .LoginSignUpBox .login_signUp_toggle p:hover {
+  color: tomato;
+}
+
+.LoginSignUpContainer .LoginSignUpBox div > button {
+  background-color: tomato;
+  border: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 50%;
+  height: 3px;
+}
+
+.LoginSignUpContainer form {
+  margin: auto;
+  padding: 2vmax;
+  height: 70%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.LoginSignUpContainer form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  width: 100%;
+}
+
+.LoginSignUpContainer form div input {
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 1vmax cursive;
+  outline: none;
+}
+
+.LoginSignUpContainer form div svg {
+  position: absolute;
+  -webkit-transform: translateX(1vmax);
+          transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+.LoginSignUpContainer form a {
+  text-decoration: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: rgba(0, 0, 0, 0.658);
+  font: 500 0.95vmax "Gill Sans";
+}
+
+.LoginSignUpContainer form a:hover {
+  color: black;
+}
+
+.LoginSignUpContainer form .loginBtn,
+.LoginSignUpContainer form .signUpBtn {
+  border: none;
+  background-color: tomato;
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  color: white;
+  font: 300 0.95vmax "Roboto";
+}
+
+.LoginSignUpContainer form .loginBtn:hover,
+.LoginSignUpContainer form .signUpBtn:hover {
+  background-color: #b3422e;
+}
+
+.LoginSignUpContainer .signUpForm {
+  -webkit-transform: translateX(-100vmax) translateY(-100%);
+          transform: translateX(-100vmax) translateY(-100%);
+}
+
+.LoginSignUpContainer .signUpForm #registerImage img {
+  width: 3vmax;
+  border-radius: 100%;
+}
+
+.LoginSignUpContainer .signUpForm #registerImage input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  padding: 0;
+}
+
+.LoginSignUpContainer .signUpForm #registerImage input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  height: 5vh;
+  border: none;
+  margin: 0%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  outline: none;
+  padding: 0 1vmax;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.623);
+  font: 400 0.8vmax cursive;
+}
+
+.LoginSignUpContainer .signUpForm #registerImage input::file-selector-button::hover {
+  background-color: #ebebeb;
+}
+
+.LoginSignUpContainer .shiftToLeft {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.LoginSignUpContainer .shiftToNeutral {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.LoginSignUpContainer .shiftToNeutralForm {
+  -webkit-transform: translateX(0%) translateY(-100%);
+          transform: translateX(0%) translateY(-100%);
+}
+
+.LoginSignUpContainer .shiftToRight {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+
+*/
+@media screen and (max-width: 600px) {
+  .LoginSignUpContainer {
+    background-color: white;
+  }
+  .LoginSignUpContainer .LoginSignUpBox {
+    width: 100vw;
+    height: 95vh;
+  }
+  .LoginSignUpContainer .LoginSignUpBox .login_signUp_toggle {
+    height: 5vmax;
+  }
+  .LoginSignUpContainer .LoginSignUpBox .login_signUp_toggle p {
+    font: 300 1.5vmax "Roboto";
+  }
+  .LoginSignUpContainer .LoginSignUpBox form {
+    padding: 5vmax;
+  }
+  .LoginSignUpContainer .LoginSignUpBox form div input {
+    padding: 2.5vmax 5vmax;
+    font: 300 1.9vmax cursive;
+  }
+  .LoginSignUpContainer .LoginSignUpBox form div svg {
+    font-size: 2.8vmax;
+  }
+  .LoginSignUpContainer .LoginSignUpBox form a {
+    font: 500 1.9vmax "Gill Sans";
+  }
+  .LoginSignUpContainer .LoginSignUpBox form .loginBtn,
+  .LoginSignUpContainer .LoginSignUpBox form .signUpBtn {
+    font: 300 1.9vmax "Roboto";
+    padding: 1.8vmax;
+  }
+  .LoginSignUpContainer .signUpForm #registerImage img {
+    width: 8vmax;
+    border-radius: 100%;
+  }
+  .LoginSignUpContainer .signUpForm #registerImage input::file-selector-button {
+    height: 7vh;
+    font: 400 1.8vmax cursive;
+  }
+}
+/*# sourceMappingURL=LoginSignUp.css.map */

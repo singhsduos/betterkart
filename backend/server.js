@@ -1,5 +1,6 @@
 const app = require("./app");
 const dotenv = require("dotenv");
+const cloudinary = require("cloudinary");
 const envFile = process.env;
 // Importing database
 const mongooseConnect = require('./config/database');
@@ -18,6 +19,13 @@ dotenv.config({ path: "backend/config/config.env" });
 
 // connceting to database
 mongooseConnect();
+
+// connecting cloudinary for images
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 
 const server = app.listen(envFile.PORT, () => {
