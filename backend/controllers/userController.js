@@ -3,13 +3,13 @@ const catchAsyncErrors = require("../middleWare/catchAsyncErrors");
 const User = require("../models/userModel");
 const sendToken = require("../utils/jwtToken");
 const sendMail = require("../utils/sendMail");
-const cloudinary = require("cloudinary");
+const cloudinary = require('cloudinary').v2;
 const crypto = require("crypto");
 
 
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     // cloudinary
-    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    const myCloud = await cloudinary.uploader.upload(req.body.avatar, {
         folder: "avatars",
         width: 150,
         crop: "scale",
