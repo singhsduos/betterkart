@@ -13,9 +13,10 @@ import store from "./store";
 import { loadUser } from './actions/userAction';
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
+import ProtectedRoute from "./component/Route/ProtectedRoute.js";
 import Profile from "./component/User/Profile.js";
 import UpdateProfile from "./component/User/UpdateProfile.js";
-import ProtectedRoute from "./component/Route/ProtectedRoute.js";
+import UpdatePassword from "./component/User/UpdatePassword.js";
 
 
 function App() {
@@ -45,10 +46,11 @@ function App() {
         <Route path="/products/:keyword" element={<Products />} />
         <Route exact path="/search" element={<Search />} /> 
 
-        {/* when user is logged in then it will access this resource */}
+        {/* when user is logged in then it will access these resources */}
         <Route exact path='/' element={<ProtectedRoute />}>
           <Route exact path='/account' element={<Profile />} />
           <Route exact path='/me/update' element={<UpdateProfile />} />
+          <Route exact path='/password/update' element={<UpdatePassword />} />
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />

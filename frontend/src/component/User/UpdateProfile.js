@@ -11,7 +11,7 @@ import MetaData from "../layout/MetaData";
 import "./SCSS/UpdateProfile/UpdateProfile.css";
 
 
-const UpdateProfile = ({ history }) => {
+const UpdateProfile = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
     const navigate = useNavigate();
