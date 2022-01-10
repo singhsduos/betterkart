@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, getProductDetails } from '../../actions/productAction';
@@ -38,6 +38,26 @@ const ProductDetails = () => {
         isHalf: true,
     }
 
+    const [quantity, setQuantity] = useState(1);
+    const [open, setOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState("");
+
+    const increaseQuantity = () => {
+        // if stock is 5 then you can add value till 5 otherwise return it
+        if (product.stock <= quantity) return;
+
+        const qty = quantity + 1;
+        setQuantity(qty);
+    };
+
+    const decreaseQuantity = () => {
+        if (1 >= quantity) return;
+
+        const qty = quantity - 1;
+        setQuantity(qty);
+    };
+
 
     return (
         <>
@@ -70,9 +90,9 @@ const ProductDetails = () => {
                             <h1>{`₹${product.price}`}</h1>
                             <div className="detailsBlock-3-1">
                                 <div className="detailsBlock-3-1-1">
-                                    <button>-</button>
-                                    <input type="number" value={product.stock} />
-                                    <button>+</button>
+                                    <button onClick={decreaseQuantity}>-</button>
+                                    <input readOnly type="number" value={quantity} />
+                                    <button onClick={increaseQuantity}>+</button>
                                 </div>
                                 <button>Add to Cart</button>
                             </div>
