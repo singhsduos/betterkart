@@ -18,6 +18,8 @@ import Profile from "./component/User/Profile.js";
 import UpdateProfile from "./component/User/UpdateProfile.js";
 import UpdatePassword from "./component/User/UpdatePassword.js";
 import ForgotPassword from "./component/User/ForgotPassword.js";
+import ResetPassword from "./component/User/ResetPassword.js";
+
 
 
 function App() {
@@ -56,6 +58,7 @@ function App() {
 
         <Route exact path="/login" element={<LoginSignUp />} />
         <Route exact path='/password/forgot' element={<ForgotPassword />} />
+        <Route exact path='/password/reset/:token' element={<ResetPassword />} />
       </Routes>
       <Footer />
     </Router>
