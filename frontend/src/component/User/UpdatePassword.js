@@ -66,7 +66,6 @@ const UpdatePassword = () => {
 
                             <form
                                 className="updatePasswordForm"
-                                encType="multipart/form-data"
                                 onSubmit={updatePasswordSubmit}
                             >
                                 <div className="loginPassword">
