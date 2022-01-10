@@ -7,6 +7,7 @@ import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction.js";
 import { useAlert } from "react-alert";
+import MetaData from "../layout/MetaData";
 
 import "./SCSS/LoginSignUp/LoginSignUp.css";
 
@@ -105,7 +106,9 @@ const LoginSignUp = () => {
     return (
         <>
 
-            {loading ? <Loader /> : <> <div className="LoginSignUpContainer">
+            {loading ? <Loader /> : <>
+                <MetaData title="LoginSignUp -- BetterKart" />
+                <div className="LoginSignUpContainer">
                 <div className="LoginSignUpBox">
                     <div>
                         <div className="login_signUp_toggle">

@@ -1,0 +1,205 @@
+.updateProfileContainer {
+  max-width: 100%;
+  background-color: #e7e7e7;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.updateProfileContainer .updateProfileBox {
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  width: 25vw;
+  height: 70vh;
+}
+
+.updateProfileContainer .updateProfileBox .updateProfileHeading {
+  text-align: center;
+  padding: 1.3vmax;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  width: 50%;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.664);
+  font: 400 1.3vmax "Roboto";
+}
+
+.updateProfileContainer form {
+  margin: auto;
+  padding: 2vmax;
+  height: 70%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.updateProfileContainer form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  width: 100%;
+}
+
+.updateProfileContainer form div input {
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 1vmax cursive;
+  outline: none;
+}
+
+.updateProfileContainer form div svg {
+  position: absolute;
+  -webkit-transform: translateX(1vmax);
+          transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+.updateProfileContainer form .updateProfileBtn {
+  border: none;
+  background-color: tomato;
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  color: white;
+  font: 300 0.95vmax "Roboto";
+}
+
+.updateProfileContainer form .updateProfileBtn:hover {
+  background-color: #b3422e;
+}
+
+.updateProfileContainer .updateProfileForm #updateProfileImage img {
+  width: 3vmax;
+  border-radius: 100%;
+  margin: 1vmax;
+}
+
+.updateProfileContainer .updateProfileForm #updateProfileImage input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  padding: 0;
+}
+
+.updateProfileContainer .updateProfileForm #updateProfileImage input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  height: 5vh;
+  border: none;
+  margin: 0%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  outline: none;
+  padding: 0 1vmax;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.623);
+  font: 400 0.8vmax cursive;
+}
+
+.updateProfileContainer .updateProfileForm #updateProfileImage input::file-selector-button::hover {
+  background-color: #ebebeb;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+
+*/
+@media screen and (max-width: 600px) {
+  .updateProfileContainer {
+    background-color: white;
+  }
+  .updateProfileContainer .updateProfileBox {
+    width: 100vw;
+    height: 95vh;
+  }
+  .updateProfileContainer .updateProfileBox form {
+    padding: 5vmax;
+  }
+  .updateProfileContainer .updateProfileBox form div input {
+    padding: 2.5vmax 5vmax;
+    font: 300 1.9vmax cursive;
+  }
+  .updateProfileContainer .updateProfileBox form div svg {
+    font-size: 2.8vmax;
+  }
+  .updateProfileContainer .updateProfileBox form a {
+    font: 500 1.9vmax "Gill Sans";
+  }
+  .updateProfileContainer .updateProfileBox form .updateProfileBtn {
+    font: 300 1.9vmax "Roboto";
+    padding: 1.8vmax;
+  }
+  .updateProfileContainer .updateProfileForm #updateProfileImage img {
+    width: 8vmax;
+    border-radius: 100%;
+  }
+  .updateProfileContainer .updateProfileForm #updateProfileImage input::file-selector-button {
+    height: 7vh;
+    font: 400 1.8vmax cursive;
+  }
+}
+/*# sourceMappingURL=UpdateProfile.css.map */
