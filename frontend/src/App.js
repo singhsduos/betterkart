@@ -5,14 +5,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import webfont from "webfontloader";
 import React, { useEffect } from "react";
 import Home from "./component/Home/Home.js";
-import ProductDetails from "./component/Product/ProductDetails.js"
-import Products from "./component/Product/Products.js"
-import Search from "./component/Product/Search.js"
+import ProductDetails from "./component/Product/ProductDetails.js";
+import Products from "./component/Product/Products.js";
+import Search from "./component/Product/Search.js";
+import Profile from "./component/User/Profile.js";
 import LoginSignUp from './component/User/LoginSignUp';
 import store from "./store";
 import { loadUser } from './actions/userAction';
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
+import ProtectedRoute from "./component/Route/ProtectedRoute.js";
 
 
 function App() {
@@ -40,7 +42,13 @@ function App() {
         <Route exact path="/product/:id" element={<ProductDetails />} />
         <Route exact path="/products" element={<Products />} />
         <Route path="/products/:keyword" element={<Products />} />
-        <Route exact path="/search" element={<Search />} />
+        <Route exact path="/search" element={<Search />} /> 
+        
+        {/* when user is logged in then it will access this resource */}
+        <Route exact path='/' element={<ProtectedRoute />}>
+          <Route exact path='/account' element={<Profile />} />
+        </Route>
+
         <Route exact path="/login" element={<LoginSignUp />} />
       </Routes>
       <Footer />

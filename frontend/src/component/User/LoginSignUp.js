@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction.js";
 import { useAlert } from "react-alert";
 
-import "./SCSS/LoginSignUp.css";
+import "./SCSS/LoginSignUp/LoginSignUp.css";
 
 
 const LoginSignUp = () => {
