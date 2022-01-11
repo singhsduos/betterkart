@@ -9,6 +9,7 @@ import './SCSS/ProductDetails/ProductDetails.css';
 import ReviewCard from './ReviewCard.js';
 import Loader from '../layout/Loader/Loader.js';
 import MetaData from "../layout/MetaData";
+import {addItemsToCart} from  "../../actions/cartAction"; 
 
 const ProductDetails = () => {
 
@@ -58,6 +59,11 @@ const ProductDetails = () => {
         setQuantity(qty);
     };
 
+    const addToCartHandler = () => {
+        dispatch(addItemsToCart(id, quantity));
+        alert.success("Item Added To Cart");
+    };
+
 
     return (
         <>
@@ -94,7 +100,7 @@ const ProductDetails = () => {
                                     <input readOnly type="number" value={quantity} />
                                     <button onClick={increaseQuantity}>+</button>
                                 </div>
-                                <button>Add to Cart</button>
+                                <button onClick={addToCartHandler}>Add to Cart</button>
                             </div>
 
 
