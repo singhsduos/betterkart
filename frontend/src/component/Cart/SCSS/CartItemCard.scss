@@ -1,0 +1,77 @@
+@mixin flexProp($drxn, $align, $justify) {
+  display: flex;
+  flex-direction: $drxn;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin colorFont($color, $font) {
+  color: $color;
+  font: $font;
+}
+
+.CartItemCard {
+  padding: 1vmax;
+  height: 8vmax;
+  box-sizing: border-box;
+  @include flexProp(row, flex-start, normal);
+
+  > img {
+    width: 5vmax;
+  }
+
+  > div {
+    margin: 0.3vmax 1vmax;
+    @include flexProp(column, normal, normal);
+
+    > a {
+      text-decoration: none;
+      @include colorFont(rgba(24, 24, 24, 0.815), 300 0.9vmax cursive);
+    }
+
+    > span {
+      @include colorFont(rgba(24, 24, 24, 0.815), 300 0.9vmax "Roboto");
+    }
+
+    > p {
+      cursor: pointer;
+      @include colorFont(tomato, 100 0.8vmax "Roboto");
+    }
+  }
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+@media screen and (max-width: 600px) {
+  .CartItemCard {
+    padding: 3vmax;
+    height: 25vmax;
+
+    > img {
+      width: 10vmax;
+    }
+
+    > div {
+      margin: 1vmax 2vmax;
+     
+
+      > a {
+        @include colorFont(rgba(24, 24, 24, 0.815), 300 2vmax cursive);
+      }
+
+      > span {
+        @include colorFont(rgba(24, 24, 24, 0.815), 300 1.9vmax "Roboto");
+      }
+
+      > p {
+        cursor: pointer;
+        @include colorFont(tomato, 100 1.8vmax "Roboto");
+      }
+    }
+  }
+}

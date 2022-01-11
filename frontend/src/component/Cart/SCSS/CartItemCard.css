@@ -1,0 +1,90 @@
+.CartItemCard {
+  padding: 1vmax;
+  height: 8vmax;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+.CartItemCard > img {
+  width: 5vmax;
+}
+
+.CartItemCard > div {
+  margin: 0.3vmax 1vmax;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+.CartItemCard > div > a {
+  text-decoration: none;
+  color: rgba(24, 24, 24, 0.815);
+  font: 300 0.9vmax cursive;
+}
+
+.CartItemCard > div > span {
+  color: rgba(24, 24, 24, 0.815);
+  font: 300 0.9vmax "Roboto";
+}
+
+.CartItemCard > div > p {
+  cursor: pointer;
+  color: tomato;
+  font: 100 0.8vmax "Roboto";
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+@media screen and (max-width: 600px) {
+  .CartItemCard {
+    padding: 3vmax;
+    height: 25vmax;
+  }
+  .CartItemCard > img {
+    width: 10vmax;
+  }
+  .CartItemCard > div {
+    margin: 1vmax 2vmax;
+  }
+  .CartItemCard > div > a {
+    color: rgba(24, 24, 24, 0.815);
+    font: 300 2vmax cursive;
+  }
+  .CartItemCard > div > span {
+    color: rgba(24, 24, 24, 0.815);
+    font: 300 1.9vmax "Roboto";
+  }
+  .CartItemCard > div > p {
+    cursor: pointer;
+    color: tomato;
+    font: 100 1.8vmax "Roboto";
+  }
+}
+/*# sourceMappingURL=CartItemCard.css.map */

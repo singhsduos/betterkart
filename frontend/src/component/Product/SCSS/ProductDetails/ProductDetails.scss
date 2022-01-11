@@ -110,10 +110,12 @@ body {
       .detailsBlock-3-1-1 {
         @include flexProp(row, center, center);
 
-        button {
+        .button {
           color: white;
           width: 3vmax;
           height: 34px;
+          min-width: 5vmax;
+          border-radius: 0.5vmax;
           @include button(
             none,
             none,
@@ -136,11 +138,11 @@ body {
           height: 8px;
           text-align: center;
           outline: none;
-          @include colorFont(rgba(0, 0, 0, 0.72), 400 0.8vmax "Roboto");
+          @include colorFont(rgba(0, 0, 0, 0.72), 400 1.2vmax "Roboto");
         }
       }
 
-      > button:last-child {
+      > .button:last-child {
         border-radius: 20px;
         margin: 1vmax;
         @include button(none, none, tomato, 0.9vmax 2vmax, pointer, all 0.5s);
@@ -206,11 +208,10 @@ body {
   }
 }
 
-.noReviews{
-          @include colorFont(rgba(0, 0, 0, 0.589), 500 1.3vmax "Gill Sans");
-          text-align: center;
+.noReviews {
+  @include colorFont(rgba(0, 0, 0, 0.589), 500 1.3vmax "Gill Sans");
+  text-align: center;
 }
-
 
 /*
  ______________________________________________
@@ -264,7 +265,7 @@ body {
       .detailsBlock-3-1 {
         flex-direction: column;
 
-        button:last-child {
+        .button:last-child {
           font: 500 1.7vmax "Roboto";
           padding: 1.5vmax;
           width: 20vmax;
@@ -274,7 +275,7 @@ body {
         .detailsBlock-3-1-1 {
           padding: 2vmax 0;
 
-          button {
+          .button {
             padding: 1.2vmax;
             width: 4vmax;
           }

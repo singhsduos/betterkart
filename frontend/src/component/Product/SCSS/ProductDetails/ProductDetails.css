@@ -140,10 +140,12 @@ body {
           justify-content: center;
 }
 
-.ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 button {
+.ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 .button {
   color: white;
   width: 3vmax;
   height: 34px;
+  min-width: 5vmax;
+  border-radius: 0.5vmax;
   border: none;
   outline: none;
   background-color: rgba(0, 0, 0, 0.616);
@@ -153,7 +155,7 @@ body {
   transition: all 0.5s;
 }
 
-.ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 button:hover {
+.ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 .button:hover {
   background-color: rgba(0, 0, 0, 0.767);
 }
 
@@ -166,10 +168,10 @@ body {
   text-align: center;
   outline: none;
   color: rgba(0, 0, 0, 0.72);
-  font: 400 0.8vmax "Roboto";
+  font: 400 1.2vmax "Roboto";
 }
 
-.ProductDetails .detailsBlock-3 .detailsBlock-3-1 > button:last-child {
+.ProductDetails .detailsBlock-3 .detailsBlock-3-1 > .button:last-child {
   border-radius: 20px;
   margin: 1vmax;
   border: none;
@@ -183,7 +185,7 @@ body {
   font: 500 0.9vmax "Roboto";
 }
 
-.ProductDetails .detailsBlock-3 .detailsBlock-3-1 > button:last-child:hover {
+.ProductDetails .detailsBlock-3 .detailsBlock-3-1 > .button:last-child:hover {
   background-color: #d6543d;
 }
 
@@ -325,7 +327,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .ProductDetails .detailsBlock-3 .detailsBlock-3-1 button:last-child {
+  .ProductDetails .detailsBlock-3 .detailsBlock-3-1 .button:last-child {
     font: 500 1.7vmax "Roboto";
     padding: 1.5vmax;
     width: 20vmax;
@@ -334,7 +336,7 @@ body {
   .ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 {
     padding: 2vmax 0;
   }
-  .ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 button {
+  .ProductDetails .detailsBlock-3 .detailsBlock-3-1 .detailsBlock-3-1-1 .button {
     padding: 1.2vmax;
     width: 4vmax;
   }

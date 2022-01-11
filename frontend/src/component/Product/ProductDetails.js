@@ -9,6 +9,9 @@ import './SCSS/ProductDetails/ProductDetails.css';
 import ReviewCard from './ReviewCard.js';
 import Loader from '../layout/Loader/Loader.js';
 import MetaData from "../layout/MetaData";
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import {addItemsToCart} from  "../../actions/cartAction"; 
 
 const ProductDetails = () => {
@@ -96,11 +99,11 @@ const ProductDetails = () => {
                             <h1>{`₹${product.price}`}</h1>
                             <div className="detailsBlock-3-1">
                                 <div className="detailsBlock-3-1-1">
-                                    <button onClick={decreaseQuantity}>-</button>
+                                    <Button onClick={decreaseQuantity} className='button'><RemoveIcon /></Button>
                                     <input readOnly type="number" value={quantity} />
-                                    <button onClick={increaseQuantity}>+</button>
+                                    <Button onClick={increaseQuantity} className='button'><AddIcon /></Button>
                                 </div>
-                                <button onClick={addToCartHandler}>Add to Cart</button>
+                                <Button onClick={addToCartHandler} className='button'>Add to Cart</Button>
                             </div>
 
 
@@ -117,8 +120,7 @@ const ProductDetails = () => {
                             Description: <p>{product.description}</p>
                         </div>
 
-                        <button className="submitReview">Submit Review</button>
-
+                        <Button className='submitReview button'>Submit Review</Button>
 
                     </div>
                 </div>
