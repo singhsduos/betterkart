@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Loader from "../layout/Loader/Loader";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation  } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
@@ -13,6 +13,7 @@ import "./SCSS/LoginSignUp/LoginSignUp.css";
 
 
 const LoginSignUp = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const alert = useAlert();
     const navigate = useNavigate();
@@ -75,6 +76,8 @@ const LoginSignUp = () => {
         }
     }
 
+    const redirect = location.search ? location.search.split("=")[1] : "/account";
+
     useEffect(() => {
         if (error) {
             alert.error(error);
@@ -82,9 +85,9 @@ const LoginSignUp = () => {
         }
 
         if (isAuthenticated) {
-            navigate("/account");
+            navigate(redirect);
         }
-    }, [dispatch, error, alert, isAuthenticated, navigate]);
+    }, [dispatch, error, alert, isAuthenticated, navigate, redirect]);
 
     const switchTabs = (e, tab) => {
         if (tab === "login") {

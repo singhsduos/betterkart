@@ -20,6 +20,7 @@ import UpdatePassword from "./component/User/UpdatePassword.js";
 import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
 import Cart from "./component/Cart/Cart.js";
+import Shipping from "./component/Cart/Shipping.js";
 
 
 
@@ -55,12 +56,14 @@ function App() {
           <Route exact path='/account' element={<Profile />} />
           <Route exact path='/me/update' element={<UpdateProfile />} />
           <Route exact path='/password/update' element={<UpdatePassword />} />
+          <Route exact path="/login/shipping" element={<Shipping />} />
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />
         <Route exact path='/password/forgot' element={<ForgotPassword />} />
         <Route exact path='/password/reset/:token' element={<ResetPassword />} />
         <Route exact path="/cart" element={<Cart />} />
+
       </Routes>
       <Footer />
     </Router>

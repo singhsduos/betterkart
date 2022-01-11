@@ -1,0 +1,123 @@
+@mixin flexProp($drxn, $align, $justify) {
+  display: flex;
+  flex-direction: $drxn;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin colorFont($color, $font) {
+  color: $color;
+  font: $font;
+}
+.shippingContainer {
+  width: 100vw;
+  max-width: 100%;
+  @include flexProp(column, center, center);
+
+  .shippingBox {
+    background-color: white;
+    width: 25vw;
+    height: 90vh;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .shippingHeading {
+      text-align: center;
+      padding: 1.3vmax;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+      width: 50%;
+      margin: auto;
+      @include colorFont(rgba(0, 0, 0, 0.664), 400 1.3vmax "Roboto");
+    }
+
+    .shippingForm {
+      margin: auto;
+      padding: 2vmax;
+      height: 80%;
+      transition: all 0.5s;
+      @include flexProp(column, center, space-evenly);
+
+      > div {
+        width: 100%;
+        @include flexProp(row, center, normal);
+
+        > input,
+        > select {
+          padding: 1vmax 4vmax;
+          padding-right: 1vmax;
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px solid rgba(0, 0, 0, 0.267);
+          border-radius: 4px;
+          font: 300 0.9vmax cursive;
+          outline: none;
+        }
+
+        > svg {
+          position: absolute;
+          transform: translateX(1vmax);
+          font-size: 1.6vmax;
+          color: rgba(0, 0, 0, 0.623);
+        }
+      }
+    }
+  }
+
+  .shippingBtn {
+    border: none;
+    background-color: tomato;
+    width: 100%;
+    padding: 1vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none;
+    margin: 2vmax;
+    @include colorFont(white, 300 1vmax "Roboto");
+
+    &:hover {
+      background-color: rgb(179, 66, 46);
+    }
+  }
+}
+
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+@media screen and (max-width: 600px) {
+  .shippingContainer {
+    .shippingBox {
+      width: 100vw;
+      height: 95vh;
+
+      .shippingHeading {
+        font: 400 6vw "Roboto";
+        padding: 5vw;
+      }
+
+      .shippingForm {
+        padding: 11vw;
+
+        > div {
+          > input,
+          > select {
+            padding: 5vw 10vw;
+            font: 300 4vw cursive;
+          }
+
+          > svg {
+            font-size: 6vw;
+            transform: translateX(3vw);
+          }
+        }
+      }
+    }
+    .shippingBtn {
+      font: 300 4vw "Roboto";
+      padding: 4vw;
+    }
+  }
+}
