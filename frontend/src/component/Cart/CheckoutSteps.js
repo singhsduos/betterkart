@@ -28,23 +28,17 @@ const CheckoutSteps = ({ activeStep }) => {
     return (
         <>
             <Stepper alternativeLabel activeStep={activeStep} style={stepStyles}>
-                {steps.map((item, index) => (
-                    <Step
-                        key={index}
-                        active={activeStep === index ? true : false}
-                        completed={activeStep >= index ? true : false}
-                    >
-                        <StepLabel
-                            style={{
+                {
+                    steps.map((item, index) => (
+                        <Step key={index}>
+                            <StepLabel style={{
                                 color: activeStep >= index ? "tomato" : "rgba(0, 0, 0, 0.649)",
-                            }}
-                            icon={item.icon}
-                        >
-                            {item.label}
-                        </StepLabel>
-                    </Step>
-                ))}
+                            }} icon={item.icon}>{item.label}</StepLabel>
+                        </Step>
+                    ))
+            }
             </Stepper>
+            
         </>
     );
 };
