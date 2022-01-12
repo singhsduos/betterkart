@@ -2,8 +2,8 @@ import './App.css';
 import Header from "./component/layout/Header/Header.js";
 import Footer from "./component/layout/Footer/Footer.js"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import webfont from "webfontloader";
-import React, { useEffect } from "react";
+import WebFont from "webfontloader";
+import React, { useEffect, useState } from "react";
 import Home from "./component/Home/Home.js";
 import ProductDetails from "./component/Product/ProductDetails.js";
 import Products from "./component/Product/Products.js";
@@ -22,6 +22,12 @@ import ResetPassword from "./component/User/ResetPassword.js";
 import Cart from "./component/Cart/Cart.js";
 import Shipping from "./component/Cart/Shipping.js";
 import ConfirmOrder from "./component/Cart/ConfirmOrder.js";
+import Payment from "./component/Cart/Payment.js"
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+
+import axios from 'axios';
 
 
 
@@ -29,16 +35,29 @@ function App() {
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
-  //  calling useEffect for font so that it load font first
+  const [stripeApiKey, setStripeApiKey] = useState("");
+
+  async function getStripeApiKey() {
+    const { data } = await axios.get("/api/v1/stripeapikey");
+
+    setStripeApiKey(data.stripeApiKey);
+  }
+
+    //  calling useEffect for font so that it load font first
   useEffect(() => {
-    webfont.load({
+    WebFont.load({
       google: {
-        families: ["Roboto", "Droid Sans", "Chilanka"]
-      }
-    })
+        families: ["Roboto", "Droid Sans", "Chilanka"],
+      },
+    });
 
     store.dispatch(loadUser());
+
+    getStripeApiKey();
   }, []);
+
+
+ 
 
 
   return (
@@ -50,7 +69,7 @@ function App() {
         <Route exact path="/product/:id" element={<ProductDetails />} />
         <Route exact path="/products" element={<Products />} />
         <Route path="/products/:keyword" element={<Products />} />
-        <Route exact path="/search" element={<Search />} /> 
+        <Route exact path="/search" element={<Search />} />
 
         {/* when user is logged in then it will access these resources */}
         <Route exact path='/' element={<ProtectedRoute />}>
@@ -59,6 +78,10 @@ function App() {
           <Route exact path='/password/update' element={<UpdatePassword />} />
           <Route exact path="/login/shipping" element={<Shipping />} />
           <Route exact path="/order/confirm" element={<ConfirmOrder />} />
+          <Route exact path="/process/payment"
+            element={stripeApiKey && (
+              <Elements stripe={loadStripe(stripeApiKey)}> <Payment /> </Elements>
+            )} />
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />
