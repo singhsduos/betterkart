@@ -1,0 +1,102 @@
+@mixin flexProp($drxn, $align, $justify) {
+  display: flex;
+  flex-direction: $drxn;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin colorFont($color, $font) {
+  color: $color;
+  font: $font;
+}
+
+@mixin gridProp($width, $gtc, $margin) {
+  display: grid;
+  width: $width;
+  grid-template-columns: $gtc;
+  margin: $margin;
+}
+
+.myOrdersPage {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 7vmax;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgb(235, 235, 235);
+  @include flexProp(column, normal, normal);
+
+  #myOrdersHeading {
+    text-align: center;
+    transition: all 0.5s;
+    background-color: rgb(44, 44, 44);
+    padding: 0.5vmax;
+    box-sizing: border-box;
+    @include colorFont(rgb(255, 255, 255), 400 1.5vmax "Roboto");
+  }
+
+  .myOrdersTable {
+    background-color: white;
+
+    div {
+      @include colorFont(rgba(0, 0, 0, 0.678), 300 1.2vmax "Roboto");
+      border: none;
+    }
+
+    a {
+      color: rgba(0, 0, 0, 0.527);
+      transition: all 0.5s;
+
+      &:hover {
+        color: tomato;
+      }
+    }
+  }
+}
+
+.MuiDataGrid-columnHeader {
+  background-color: tomato;
+  padding: 1vmax !important;
+
+  div {
+    @include colorFont(rgb(255, 255, 255), 500 1.2vmax "Roboto" !important);
+  }
+}
+
+.MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+@media screen and (max-width: 600px) {
+  .myOrdersPage {
+    padding: 0;
+    height: 93vh;
+
+    #myOrdersHeading {
+      font: 400 2.2vmax "Roboto";
+      padding: 4vw;
+    }
+
+    .myOrdersTable div {
+      font: 300 4vw "Roboto";
+    }
+  }
+
+  .MuiDataGrid-columnHeader {
+    padding: 20px !important;
+
+    div {
+      font: 500 5vw "Roboto" !important;
+    }
+  }
+}

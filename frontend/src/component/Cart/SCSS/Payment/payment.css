@@ -75,6 +75,12 @@
   background-color: #b3422e;
 }
 
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
 @media screen and (max-width: 600px) {
   .paymentContainer .paymentForm {
     width: 90%;

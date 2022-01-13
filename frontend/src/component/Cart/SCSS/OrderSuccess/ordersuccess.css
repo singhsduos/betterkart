@@ -38,6 +38,12 @@
   margin: 2vmax;
 }
 
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
 @media screen and (max-width: 600px) {
   .orderSuccess > a {
     padding: 3vw 6vw;
