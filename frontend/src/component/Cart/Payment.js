@@ -32,13 +32,15 @@ const Payment = () => {
 
     const { shippingInfo, cartItems } = useSelector((state) => state.cart);
     const { user } = useSelector((state) => state.user);
-    // const { error } = useSelector((state) => state.newOrder);
+    const { error } = useSelector((state) => state.newOrder);
+
+
 
     const paymentData = {
         amount: Math.round(orderInfo.totalPrice * 100),
-
     };
 
+    
     const order = {
         shippingInfo,
         orderItems: cartItems,
@@ -111,12 +113,12 @@ const Payment = () => {
         }
     };
 
-    // useEffect(() => {
-    //     if (error) {
-    //         alert.error(error);
-    //         dispatch(clearErrors());
-    //     }
-    // }, [dispatch, error, alert]);
+    useEffect(() => {
+        if (error) {
+            alert.error(error);
+            dispatch(clearErrors());
+        }
+    }, [dispatch, error, alert]);
 
     return (
         <>
