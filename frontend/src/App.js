@@ -46,7 +46,8 @@ function App() {
     setStripeApiKey(data.stripeApiKey);
   }
 
-    //  calling useEffect for font so that it load font first
+
+  //  calling useEffect for font so that it load font first
   useEffect(() => {
     WebFont.load({
       google: {
@@ -60,13 +61,15 @@ function App() {
   }, []);
 
 
- 
+
 
 
   return (
     <Router>
       <Header />
       {isAuthenticated && <UserOptions user={user} />}
+
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/product/:id" element={<ProductDetails />} />
@@ -81,11 +84,14 @@ function App() {
           <Route exact path='/password/update' element={<UpdatePassword />} />
           <Route exact path="/login/shipping" element={<Shipping />} />
           <Route exact path="/order/confirm" element={<ConfirmOrder />} />
-          <Route exact path="/process/payment"
-            element={stripeApiKey && (
-              <Elements stripe={loadStripe(stripeApiKey)}> <Payment /> </Elements>
-            )} />
           <Route exact path="/success" element={<OrderSuccess />} />
+          <Route exact path="/process/payment/*" element={stripeApiKey && (
+            <Elements stripe={loadStripe(stripeApiKey)}>
+              <Routes>
+                <Route path="/" element={<Payment />} />
+              </Routes>
+            </Elements>
+          )} />
 
         </Route>
 
