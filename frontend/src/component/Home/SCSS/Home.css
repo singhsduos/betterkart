@@ -159,14 +159,14 @@
   width: 10vmax;
 }
 
-.container .productCard div span {
+.container .productCard div .span {
   margin: 0.5vmax 0vmax;
   font: 500 1.2vmax "Roboto", Arial, sans-serif;
   width: 10vmax;
   text-align: center;
 }
 
-.container .productCard > span {
+.container .productCard > .productPriceSpan {
   margin: 0.5vmax;
   color: tomato;
   font: 600 1.7vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -193,11 +193,11 @@
   .container .productCard div .stars {
     width: 15vmax;
   }
-  .container .productCard div span {
+  .container .productCard div .span {
     margin: 0 0.5vmax;
     font: 300 1vmax "Roboto", Arial, sans-serif;
   }
-  .container .productCard > span {
+  .container .productCard > .productPriceSpan {
     font-size: 1.5vmax;
   }
 }

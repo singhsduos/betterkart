@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearErrors, getProductDetails } from '../../actions/productAction';
+import { clearErrors, getProductDetails, newReview } from '../../actions/productAction';
 import { useAlert } from "react-alert";
 import { useParams } from "react-router-dom";
-import ReactStar from "react-rating-stars-component";
-import './SCSS/ProductDetails/ProductDetails.css';
 import ReviewCard from './ReviewCard.js';
 import Loader from '../layout/Loader/Loader.js';
 import MetaData from "../layout/MetaData";
-import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import {addItemsToCart} from  "../../actions/cartAction"; 
+import { addItemsToCart } from "../../actions/cartAction";
+import {
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Button,
+} from "@material-ui/core";
+import { Rating } from "@material-ui/lab";
+import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+import './SCSS/ProductDetails/ProductDetails.css';
 
 const ProductDetails = () => {
 
@@ -20,6 +27,9 @@ const ProductDetails = () => {
     const alert = useAlert();
 
     const { product, loading, error } = useSelector((state) => state.productDetails);
+    const { success, error: reviewError } = useSelector(
+        (state) => state.newReview
+    );
 
     // Get the userId param from the URL.
     const { id } = useParams();
@@ -34,12 +44,10 @@ const ProductDetails = () => {
 
     // CSS and Values for Stars
     const options = {
-        edit: false,
-        color: "rgba(20, 20, 20, 0.1)",
-        activeColor: "tomato",
-        size: window.innerWidth < 600 ? 18 : 20,
+        size: "large",
         value: product.ratings,
-        isHalf: true,
+        readOnly: true,
+        precision: 0.5,
     }
 
     const [quantity, setQuantity] = useState(1);
@@ -67,6 +75,39 @@ const ProductDetails = () => {
         alert.success("Item Added To Cart");
     };
 
+    const submitReviewToggle = () => {
+        open ? setOpen(false) : setOpen(true);
+    };
+
+    const reviewSubmitHandler = () => {
+        const myForm = new FormData();
+
+        myForm.set("rating", rating);
+        myForm.set("comment", comment);
+        myForm.set("productId", id);
+
+        dispatch(newReview(myForm));
+
+        setOpen(false);
+    };
+
+    useEffect(() => {
+        if (error) {
+            alert.error(error);
+            dispatch(clearErrors());
+        }
+
+        if (reviewError) {
+            alert.error(reviewError);
+            dispatch(clearErrors());
+        }
+
+        if (success) {
+            alert.success("Review Submitted Successfully");
+            dispatch({ type: NEW_REVIEW_RESET });
+        }
+        dispatch(getProductDetails(id));
+    }, [dispatch, id, error, alert, reviewError, success]);
 
     return (
         <>
@@ -91,8 +132,8 @@ const ProductDetails = () => {
                         </div>
 
                         <div className="detailsBlock-2">
-                            <ReactStar {...options} />
-                            <span>({product.numberOfReviews} Reviews)</span>
+                            <Rating {...options} />
+                            <span className='span'>({product.numberOfReviews} Reviews)</span>
                         </div>
 
                         <div className="detailsBlock-3">
@@ -103,7 +144,7 @@ const ProductDetails = () => {
                                     <input readOnly type="number" value={quantity} />
                                     <Button onClick={increaseQuantity} className='button'><AddIcon /></Button>
                                 </div>
-                                <Button onClick={addToCartHandler} className='button'>Add to Cart</Button>
+                                <Button disabled={product.stock < 1 ? true : false} onClick={addToCartHandler} className='button'>Add to Cart</Button>
                             </div>
 
 
@@ -120,16 +161,46 @@ const ProductDetails = () => {
                             Description: <p>{product.description}</p>
                         </div>
 
-                        <Button className='submitReview button'>Submit Review</Button>
+                        <Button onClick={submitReviewToggle} className='submitReview button'>Submit Review</Button>
 
                     </div>
                 </div>
 
                 <h3 className='reviewsHeading'>Reviews</h3>
+                <Dialog
+                    aria-labelledby="simple-dialog-title"
+                    open={open}
+                    onClose={submitReviewToggle}
+                >
+                    <DialogTitle>Submit Review</DialogTitle>
+                    <DialogContent className="submitDialog">
+                        <Rating
+                            onChange={(e) => setRating(e.target.value)}
+                            value={rating}
+                            size="large"
+                        />
+
+                        <textarea
+                            className="submitDialogTextArea"
+                            cols="30"
+                            rows="5"
+                            value={comment}
+                            onChange={(e) => setComment(e.target.value)}
+                        ></textarea>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={submitReviewToggle} color="secondary">
+                            Cancel
+                        </Button>
+                        <Button onClick={reviewSubmitHandler} color="primary">
+                            Submit
+                        </Button>
+                    </DialogActions>
+                </Dialog>
                 {
                     product.reviews && product.reviews[0] ? (
                         <div className="reviews">
-                            {product.reviews && product.reviews.map((review,i) => <ReviewCard review={review} key={i} />)}
+                            {product.reviews && product.reviews.map((review, i) => <ReviewCard review={review} key={i} />)}
                         </div>
                     ) : (<p className="noReviews">No Reviews Yet</p>)
                 }

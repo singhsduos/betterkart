@@ -78,7 +78,7 @@ body {
     );
     @include flexProp(row, center, flex-start);
 
-    span {
+    .span{
       @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax cursive);
     }
   }
@@ -174,7 +174,21 @@ body {
       transform: scale(1.1);
     }
   }
+
 }
+
+  .submitDialog {
+    @include flexProp(column, normal, normal);
+  }
+
+
+    .submitDialogTextArea {
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      padding: 1rem !important;
+      margin: 1vmax 0 !important;
+      outline: none !important;
+      font: 300 1rem "Roboto" !important;
+    }
 
 .reviewsHeading {
   text-align: center;
@@ -203,7 +217,7 @@ body {
     @include colorFont(rgba(0, 0, 0, 0.863), 600 0.9vmax "Roboto");
   }
 
-  span {
+ .reviewCardComment {
     @include colorFont(rgba(0, 0, 0, 0.863), 500 0.7vmax cursive);
   }
 }

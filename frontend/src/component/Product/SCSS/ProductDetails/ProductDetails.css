@@ -84,7 +84,7 @@ body {
           justify-content: flex-start;
 }
 
-.ProductDetails .detailsBlock-2 span {
+.ProductDetails .detailsBlock-2 .span {
   color: rgba(54, 54, 54, 0.782);
   font: 200 0.8vmax cursive;
 }
@@ -219,6 +219,30 @@ body {
           transform: scale(1.1);
 }
 
+.submitDialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+.submitDialogTextArea {
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 1rem !important;
+  margin: 1vmax 0 !important;
+  outline: none !important;
+  font: 300 1rem "Roboto" !important;
+}
+
 .reviewsHeading {
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
@@ -264,7 +288,7 @@ body {
   font: 600 0.9vmax "Roboto";
 }
 
-.reviewCard span {
+.reviewCard .reviewCardComment {
   color: rgba(0, 0, 0, 0.863);
   font: 500 0.7vmax cursive;
 }
