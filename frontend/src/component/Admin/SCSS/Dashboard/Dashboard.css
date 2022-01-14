@@ -1,0 +1,16 @@
+.dashboard {
+  width: 100vw;
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  position: absolute;
+}
+
+.dashboard .dashboardContainer {
+  border-left: 1px solid rgba(0, 0, 0, 0.13);
+  background-color: white;
+  padding: 3rem 0;
+}
+/*# sourceMappingURL=Dashboard.css.map */

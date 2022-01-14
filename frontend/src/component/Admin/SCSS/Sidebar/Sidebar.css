@@ -1,0 +1,78 @@
+.sidebar {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4rem 0;
+}
+
+.sidebar > a:first-child {
+  padding: 0;
+}
+
+.sidebar > a > img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.sidebar > a > img:hover {
+  -webkit-filter: drop-shadow(0 0 10px tomato);
+          filter: drop-shadow(0 0 10px tomato);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.493);
+  font: 200 1rem "Roboto";
+  padding: 2rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.sidebar a:hover {
+  color: tomato;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.sidebar a > P {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar a > p > svg {
+  margin-right: 0.5rem;
+}
+
+.MuiTypography-root {
+  background-color: #fff !important;
+}
+
+.MuiTreeItem-content {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 0.493) !important;
+  font: 200 1rem "Roboto" !important;
+  padding: 2rem !important;
+  -webkit-transition: all 0.5s !important;
+  transition: all 0.5s !important;
+}
+
+.MuiTreeItem-content:hover {
+  color: tomato !important;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.MuiTreeItem-iconContainer svg {
+  font-size: 2rem !important;
+}
+/*# sourceMappingURL=Sidebar.css.map */

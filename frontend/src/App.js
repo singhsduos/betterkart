@@ -26,6 +26,7 @@ import Payment from "./component/Cart/Payment.js"
 import OrderSuccess from "./component/Cart/OrderSuccess.js";
 import MyOrders from "./component/Order/MyOrders.js";
 import OrderDetails from "./component/Order/OrderDetails.js";
+import Dashboard from "./component/Admin/Dashboard.js";
 
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -94,11 +95,10 @@ function App() {
               </Routes>
             </Elements>
           )} />
-
           <Route exact path="/orders" element={<MyOrders />} />
           <Route exact path="/order/confirm" element={<ConfirmOrder />} />
           <Route exact path="/order/:id" element={<OrderDetails />} />
-
+          <Route exact path="/admin/dashboard" element={<Dashboard />} />
 
         </Route>
 
