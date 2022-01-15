@@ -56,3 +56,19 @@
 .MuiTreeItem-iconContainer svg {
     font-size: 2rem !important;
 }
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+@media screen and (max-width: 600px) {
+.sidebar {
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+}
+

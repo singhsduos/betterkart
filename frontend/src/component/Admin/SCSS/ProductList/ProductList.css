@@ -1,0 +1,94 @@
+.productListContainer {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  border-left: 1px solid rgba(0, 0, 0, 0.158);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productListContainer #productListHeading {
+  padding: 0.5vmax;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: 2rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.637);
+  font: 400 2rem "Roboto";
+}
+
+.productListContainer .productListTable {
+  background-color: white;
+  border: none !important;
+}
+
+.productListContainer .productListTable div {
+  border: none !important;
+  color: rgba(0, 0, 0, 0.637);
+  font: 300 1vmax "Roboto";
+}
+
+.productListContainer .productListTable a,
+.productListContainer .productListTable .button {
+  color: rgba(0, 0, 0, 0.527) !important;
+  -webkit-transition: all 0.5s !important;
+  transition: all 0.5s !important;
+}
+
+.productListContainer .productListTable a:hover {
+  color: tomato;
+}
+
+.productListContainer .productListTable .button:hover {
+  color: #ec1e1e !important;
+}
+
+.MuiDataGrid-columnHeader div {
+  color: white !important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell--textRight.MuiDataGrid-cell--withRenderer,
+.MuiDataGrid-root .MuiDataGrid-cell--textRight.MuiDataGrid-cell--editing {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+@media screen and (max-width: 600px) {
+  .productListContainer .productListTable div {
+    font: 300 3vw "Roboto";
+  }
+}
+/*# sourceMappingURL=ProductList.css.map */

@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductDetails, createProductReview, getProductReviews, deleteReview } = require("../controllers/productController");
+const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductDetails, createProductReview, getProductReviews, deleteReview, getAdminProducts } = require("../controllers/productController");
 const { isUserAuthenticated, authorizedRole } = require("../middleWare/auth");
 
 // call router function from express
@@ -11,6 +11,10 @@ router.route('/products').get(getAllProducts);
 
 // Make Get request for products details
 router.route('/product/:id').get(getProductDetails);
+
+// Make Get request for products -- ADMIN
+router.route('/admin/products').get(isUserAuthenticated, authorizedRole("admin"), getAdminProducts);
+
 
 // Make Post request for products
 router.route('/admin/products/new').post(isUserAuthenticated, authorizedRole("admin"), createProduct);

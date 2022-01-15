@@ -4,9 +4,9 @@ import {
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
     ALL_PRODUCT_FAIL,
-    // ADMIN_PRODUCT_REQUEST,
-    // ADMIN_PRODUCT_SUCCESS,
-    // ADMIN_PRODUCT_FAIL,
+    ADMIN_PRODUCT_REQUEST,
+    ADMIN_PRODUCT_SUCCESS,
+    ADMIN_PRODUCT_FAIL,
     // NEW_PRODUCT_REQUEST,
     // NEW_PRODUCT_SUCCESS,
     // NEW_PRODUCT_FAIL,
@@ -66,7 +66,31 @@ export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], ca
     }
 }
 
+export const getAdminProduct = () => async (dispatch) => {
+    try {
 
+        dispatch({
+            type: ADMIN_PRODUCT_REQUEST,
+        });
+
+        let link = `/api/v1/admin/products`;
+
+        const { data } = await axios.get(link);
+
+        dispatch({
+            type: ADMIN_PRODUCT_SUCCESS,
+            payload: data.products,
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: ADMIN_PRODUCT_FAIL,
+            payload: err.response.data.message,
+        })
+    }
+}
+
+// Get Product Details
 export const getProductDetails = (id) => async (dispatch) => {
     try {
 

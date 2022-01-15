@@ -1,0 +1,76 @@
+@mixin flexProp($drxn, $align, $justify) {
+  display: flex;
+  flex-direction: $drxn;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin colorFont($color, $font) {
+  color: $color;
+  font: $font;
+}
+
+.productListContainer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border-left: 1px solid rgba(0, 0, 0, 0.158);
+  height: 100vh;
+  @include flexProp(column, normal, center);
+
+  #productListHeading {
+    padding: 0.5vmax;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    margin: 2rem;
+    text-align: center;
+    @include colorFont(rgba(0, 0, 0, 0.637), 400 2rem "Roboto");
+  }
+
+  .productListTable {
+    background-color: white;
+    border: none !important;
+
+    div {
+      border: none !important;
+      @include colorFont(rgba(0, 0, 0, 0.637), 300 1vmax "Roboto");
+    }
+
+    a,
+    .button {
+      color: rgba(0, 0, 0, 0.527) !important;
+      transition: all 0.5s !important;
+    }
+
+    a:hover {
+      color: tomato;
+    }
+
+    .button:hover {
+      color: rgb(236, 30, 30) !important;
+    }
+  }
+}
+
+.MuiDataGrid-columnHeader div {
+  color: rgb(255, 255, 255) !important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell--textRight.MuiDataGrid-cell--withRenderer,
+.MuiDataGrid-root .MuiDataGrid-cell--textRight.MuiDataGrid-cell--editing {
+  display: flex !important;
+   @include flexProp(row, flex-start !important, flex-end);
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+@media screen and (max-width: 600px) {
+  .productListContainer .productListTable div {
+    font: 300 3vw "Roboto";
+  }
+}

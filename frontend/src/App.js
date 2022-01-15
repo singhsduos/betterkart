@@ -28,6 +28,7 @@ import OrderSuccess from "./component/Cart/OrderSuccess.js";
 import MyOrders from "./component/Order/MyOrders.js";
 import OrderDetails from "./component/Order/OrderDetails.js";
 import Dashboard from "./component/Admin/Dashboard.js";
+import ProductList from "./component/Admin/ProductList.js";
 
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -104,6 +105,7 @@ function App() {
         {/* when admin is logged in then it will access these resources */}
         <Route exact path='/' element={<AdminRoute />}>
           <Route exact path="/admin/dashboard" element={<Dashboard />} />
+          <Route exact path="/admin/products" element={<ProductList />} />
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />
