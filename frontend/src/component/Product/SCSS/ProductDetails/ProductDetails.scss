@@ -78,8 +78,8 @@ body {
     );
     @include flexProp(row, center, flex-start);
 
-    .span{
-      @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax cursive);
+    .span{ 
+     @include colorFont(rgba(54, 54, 54, 0.782), 200 0.8vmax cursive);
     }
   }
 

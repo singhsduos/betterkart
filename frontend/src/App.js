@@ -14,6 +14,7 @@ import { loadUser } from './actions/userAction';
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
 import ProtectedRoute from "./component/Route/ProtectedRoute.js";
+import AdminRoute from "./component/Route/AdminRoute.js";
 import Profile from "./component/User/Profile.js";
 import UpdateProfile from "./component/User/UpdateProfile.js";
 import UpdatePassword from "./component/User/UpdatePassword.js";
@@ -98,8 +99,11 @@ function App() {
           <Route exact path="/orders" element={<MyOrders />} />
           <Route exact path="/order/confirm" element={<ConfirmOrder />} />
           <Route exact path="/order/:id" element={<OrderDetails />} />
-          <Route exact path="/admin/dashboard" element={<Dashboard />} />
+        </Route>
 
+        {/* when admin is logged in then it will access these resources */}
+        <Route exact path='/' element={<AdminRoute />}>
+          <Route exact path="/admin/dashboard" element={<Dashboard />} />
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />

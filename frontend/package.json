@@ -17,6 +17,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
+    "chart.js": "^3.7.0",
     "core-js": "^3.20.2",
     "country-state-city": "^3.0.1",
     "overlay-navbar": "^1.1.1",

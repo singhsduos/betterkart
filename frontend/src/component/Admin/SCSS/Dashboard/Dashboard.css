@@ -5,12 +5,132 @@
   display: grid;
   -ms-grid-columns: 1fr 5fr;
       grid-template-columns: 1fr 5fr;
-  position: absolute;
 }
 
 .dashboard .dashboardContainer {
   border-left: 1px solid rgba(0, 0, 0, 0.13);
   background-color: white;
   padding: 3rem 0;
+}
+
+.dashboard .dashboardContainer > h1 {
+  text-align: center;
+  width: 50%;
+  padding: 1.5rem;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.733);
+  font: 300 2rem "Roboto";
+}
+
+.dashboard .dashboardContainer .dashboardSummary {
+  margin: 2rem 0;
+}
+
+.dashboard .dashboardContainer .dashboardSummary > div {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard .dashboardContainer .dashboardSummary > div > p {
+  background-color: rgba(70, 117, 218, 0.932);
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+  margin: 0 2rem;
+  color: white;
+  font: 300 1.3rem "Roboto";
+}
+
+.dashboard .dashboardContainer .dashboardSummaryBox2 {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dashboard .dashboardContainer .dashboardSummaryBox2 > a {
+  text-align: center;
+  background-color: #ffe9ae;
+  text-decoration: none;
+  padding: 1.5rem;
+  width: 10vmax;
+  height: 10vmax;
+  margin: 2rem;
+  border-radius: 100%;
+  color: black;
+  font: 300 1.5rem "Roboto";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard .dashboardContainer .dashboardSummaryBox2 > a:first-child {
+  background-color: #ff6e6e;
+  color: white;
+}
+
+.dashboard .dashboardContainer .dashboardSummaryBox2 > a:last-child {
+  background-color: #333333;
+  color: white;
+}
+
+.dashboard .lineChart {
+  width: 80%;
+  margin: auto;
+}
+
+.dashboard .doughnutChart {
+  width: 30vmax;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .dashboard .dashboardContainer {
+    border-left: none;
+  }
+  .dashboard .dashboardSummary > div > p {
+    margin: 0;
+  }
+  .dashboard .dashboardSummaryBox2 > a {
+    padding: 0.5rem;
+    margin: 1rem;
+    font: 300 0.9rem "Roboto";
+  }
 }
 /*# sourceMappingURL=Dashboard.css.map */
