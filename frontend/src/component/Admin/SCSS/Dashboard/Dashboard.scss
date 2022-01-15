@@ -87,6 +87,14 @@
   }
 }
 
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+
 @media screen and (max-width: 600px) {
   .dashboard {
     grid-template-columns: 1fr;

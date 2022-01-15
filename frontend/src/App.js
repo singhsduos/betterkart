@@ -37,6 +37,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 
 import axios from 'axios';
+import NewProduct from './component/Admin/NewProduct';
 
 
 
@@ -106,6 +107,8 @@ function App() {
         <Route exact path='/' element={<AdminRoute />}>
           <Route exact path="/admin/dashboard" element={<Dashboard />} />
           <Route exact path="/admin/products" element={<ProductList />} />
+          <Route exact path="/admin/product" element={<NewProduct />} />
+
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />

@@ -116,6 +116,12 @@
   margin: auto;
 }
 
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
 @media screen and (max-width: 600px) {
   .dashboard {
     -ms-grid-columns: 1fr;

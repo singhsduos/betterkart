@@ -17,13 +17,13 @@ router.route('/admin/products').get(isUserAuthenticated, authorizedRole("admin")
 
 
 // Make Post request for products
-router.route('/admin/products/new').post(isUserAuthenticated, authorizedRole("admin"), createProduct);
+router.route('/admin/product/new').post(isUserAuthenticated, authorizedRole("admin"), createProduct);
 
 //  Make a Put request for update a product
-router.route('/admin/products/:id').put(isUserAuthenticated, authorizedRole("admin"), updateProduct);
+router.route('/admin/product/:id').put(isUserAuthenticated, authorizedRole("admin"), updateProduct);
 
 // Make a Delete request for product
-router.route('/admin/products/:id').delete(isUserAuthenticated, authorizedRole("admin"), deleteProduct);
+router.route('/admin/product/:id').delete(isUserAuthenticated, authorizedRole("admin"), deleteProduct);
 
 // Make Put request for Review
 router.route('/review').put(isUserAuthenticated, createProductReview);

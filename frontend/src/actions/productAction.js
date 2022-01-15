@@ -7,10 +7,9 @@ import {
     ADMIN_PRODUCT_REQUEST,
     ADMIN_PRODUCT_SUCCESS,
     ADMIN_PRODUCT_FAIL,
-    // NEW_PRODUCT_REQUEST,
-    // NEW_PRODUCT_SUCCESS,
-    // NEW_PRODUCT_FAIL,
-    // NEW_PRODUCT_RESET,
+    NEW_PRODUCT_REQUEST,
+    NEW_PRODUCT_SUCCESS,
+    NEW_PRODUCT_FAIL,
     // UPDATE_PRODUCT_REQUEST,
     // UPDATE_PRODUCT_SUCCESS,
     // UPDATE_PRODUCT_FAIL,
@@ -85,6 +84,35 @@ export const getAdminProduct = () => async (dispatch) => {
     catch (err) {
         dispatch({
             type: ADMIN_PRODUCT_FAIL,
+            payload: err.response.data.message,
+        })
+    }
+}
+
+// Create Product
+export const createProduct = (productData) => async (dispatch) => {
+    try {
+
+        dispatch({
+            type: NEW_PRODUCT_REQUEST,
+        });
+
+        const config = {
+            headers: { "Content-Type": "application/json" },
+        };
+
+        let link = `/api/v1/admin/product/new`;
+
+        const { data } = await axios.post(link, productData, config);
+
+        dispatch({
+            type: NEW_PRODUCT_SUCCESS,
+            payload: data,
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: NEW_PRODUCT_FAIL,
             payload: err.response.data.message,
         })
     }

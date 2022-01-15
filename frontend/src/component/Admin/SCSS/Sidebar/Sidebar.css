@@ -76,6 +76,10 @@
   font-size: 2rem !important;
 }
 
+.MuiTreeItem-label {
+  width: 67% !important;
+}
+
 /*
  ______________________________________________
 |                                              |

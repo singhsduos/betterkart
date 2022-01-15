@@ -15,9 +15,9 @@ import SideBar from "./Sidebar";
 import "./SCSS/ProductList/ProductList.css";
 
 const ProductList = () => {
-    
+
     const dispatch = useDispatch();
-const alert = useAlert();
+    const alert = useAlert();
 
     const { error, products } = useSelector((state) => state.products);
 
@@ -29,7 +29,7 @@ const alert = useAlert();
             dispatch(clearErrors());
         }
 
-       
+
 
         dispatch(getAdminProduct());
     }, [dispatch, alert, error]);
@@ -74,7 +74,7 @@ const alert = useAlert();
                         </Link>
 
                         <Button className="button"
-                            
+
                         >
                             <DeleteIcon />
                         </Button>
