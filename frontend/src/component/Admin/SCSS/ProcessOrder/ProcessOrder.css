@@ -1,0 +1,133 @@
+.orderDetailsPage {
+  background-color: white;
+}
+
+.orderDetailsPage .orderDetailsContainer {
+  padding: 5vmax;
+  padding-bottom: 0%;
+}
+
+.orderDetailsPage .orderDetailsContainer > h1 {
+  font: 300 3vmax "Roboto";
+  margin: 4vmax 0;
+  color: tomato;
+}
+
+.orderDetailsPage .orderDetailsContainer > p {
+  font: 400 1.8vmax "Roboto";
+}
+
+.orderDetailsPage .orderDetailsContainerBox,
+.orderDetailsPage .orderDetailsCartItemsContainer {
+  margin: 2vmax;
+}
+
+.orderDetailsPage .orderDetailsContainerBox > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1vmax 0;
+}
+
+.orderDetailsPage .orderDetailsContainerBox > div > p {
+  font: 400 1vmax "Roboto";
+  color: black;
+}
+
+.orderDetailsPage .orderDetailsContainerBox > div > span {
+  margin: 0 1vmax;
+  font: 100 1vmax "Roboto";
+  color: #575757;
+}
+
+.orderDetailsPage .orderDetailsCartItems {
+  padding: 2vmax 5vmax;
+  border-top: 1px solid rgba(0, 0, 0, 0.164);
+}
+
+.orderDetailsPage .orderDetailsCartItems > p {
+  font: 400 1.8vmax "Roboto";
+}
+
+.orderDetailsPage .orderDetailsCartItemsContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: 400 1vmax "Roboto";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2vmax 0;
+}
+
+.orderDetailsPage .orderDetailsCartItemsContainer > div > img {
+  width: 3vmax;
+}
+
+.orderDetailsPage .orderDetailsCartItemsContainer > div a {
+  color: #575757;
+  margin: 0 2vmax;
+  width: 60%;
+  text-decoration: none;
+}
+
+.orderDetailsPage .orderDetailsCartItemsContainer > div > span {
+  font: 100 1vmax "Roboto";
+  color: #5e5e5e;
+}
+
+.updateOrderForm {
+  margin: 5vmax 0;
+  padding: 3vmax;
+  background-color: white;
+}
+
+.updateOrderForm > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.updateOrderForm > div > select {
+  padding: 1vmax 4vmax;
+  margin: 2rem 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 0.9vmax cursive;
+  outline: none;
+}
+
+.updateOrderForm > div > svg {
+  position: absolute;
+  -webkit-transform: translateX(1vmax);
+          transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+@media screen and (max-width: 600px) {
+  .updateOrderForm {
+    padding: 5vmax;
+  }
+  .updateOrderForm > div {
+    padding: 2.5vmax 5vmax;
+    font: 300 1.7vmax cursive;
+  }
+  .updateOrderForm > div > svg {
+    font-size: 2.8vmax;
+  }
+}
+/*# sourceMappingURL=ProcessOrder.css.map */

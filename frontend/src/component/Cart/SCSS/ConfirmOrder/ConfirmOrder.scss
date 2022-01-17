@@ -1,5 +1,5 @@
 @mixin gridProp($width, $gtc, $margin) {
-  display: grid;
+  display: grid !important;
   width: $width;
   grid-template-columns: $gtc;
   margin: $margin;
@@ -19,7 +19,7 @@
 
 .confirmOrderPage {
   height: 100vh;
-  display: grid;
+  display: grid !important;
   grid-template-columns: 6fr 3fr;
   background-color: white;
 

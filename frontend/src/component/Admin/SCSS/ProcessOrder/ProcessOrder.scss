@@ -1,0 +1,128 @@
+.orderDetailsPage {
+  background-color: white;
+
+  .orderDetailsContainer {
+    padding: 5vmax;
+    padding-bottom: 0%;
+
+    > h1 {
+      font: 300 3vmax "Roboto";
+      margin: 4vmax 0;
+      color: tomato;
+    }
+
+    > p {
+      font: 400 1.8vmax "Roboto";
+    }
+  }
+
+  .orderDetailsContainerBox,
+  .orderDetailsCartItemsContainer {
+    margin: 2vmax;
+  }
+
+  .orderDetailsContainerBox > div {
+    display: flex;
+    margin: 1vmax 0;
+
+    > p {
+      font: 400 1vmax "Roboto";
+      color: black;
+    }
+
+    > span {
+      margin: 0 1vmax;
+      font: 100 1vmax "Roboto";
+      color: #575757;
+    }
+  }
+
+  .orderDetailsCartItems {
+    padding: 2vmax 5vmax;
+    border-top: 1px solid rgba(0, 0, 0, 0.164);
+
+    > p {
+      font: 400 1.8vmax "Roboto";
+    }
+  }
+
+  .orderDetailsCartItemsContainer {
+    > div {
+      display: flex;
+      font: 400 1vmax "Roboto";
+      align-items: center;
+      margin: 2vmax 0;
+
+      > img {
+        width: 3vmax;
+      }
+
+      a {
+        color: #575757;
+        margin: 0 2vmax;
+        width: 60%;
+        text-decoration: none;
+      }
+
+      > span {
+        font: 100 1vmax "Roboto";
+        color: #5e5e5e;
+      }
+    }
+  }
+}
+
+
+.updateOrderForm {
+  margin: 5vmax 0;
+  padding: 3vmax;
+  background-color: white;
+
+  > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    > select {
+      padding: 1vmax 4vmax;
+      margin: 2rem 0;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.267);
+      border-radius: 4px;
+      font: 300 0.9vmax cursive;
+      outline: none;
+    }
+
+    > svg {
+      position: absolute;
+      transform: translateX(1vmax);
+      font-size: 1.6vmax;
+      color: rgba(0, 0, 0, 0.623);
+    }
+  }
+}
+
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+
+@media screen and (max-width: 600px) {
+  .updateOrderForm {
+    padding: 5vmax;
+
+    > div {
+      padding: 2.5vmax 5vmax;
+      font: 300 1.7vmax cursive;
+
+      > svg {
+        font-size: 2.8vmax;
+      }
+    }
+  }
+}
