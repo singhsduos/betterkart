@@ -10,14 +10,12 @@ import {
     NEW_PRODUCT_REQUEST,
     NEW_PRODUCT_SUCCESS,
     NEW_PRODUCT_FAIL,
-    // UPDATE_PRODUCT_REQUEST,
-    // UPDATE_PRODUCT_SUCCESS,
-    // UPDATE_PRODUCT_FAIL,
-    // UPDATE_PRODUCT_RESET,
-    // DELETE_PRODUCT_REQUEST,
-    // DELETE_PRODUCT_SUCCESS,
-    // DELETE_PRODUCT_FAIL,
-    // DELETE_PRODUCT_RESET,
+    UPDATE_PRODUCT_REQUEST,
+    UPDATE_PRODUCT_SUCCESS,
+    UPDATE_PRODUCT_FAIL,
+    DELETE_PRODUCT_REQUEST,
+    DELETE_PRODUCT_SUCCESS,
+    DELETE_PRODUCT_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
@@ -38,10 +36,10 @@ import {
 
 
 export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) => async (dispatch) => {
-    try { 
- 
+    try {
+
         dispatch({
-            type:ALL_PRODUCT_REQUEST,
+            type: ALL_PRODUCT_REQUEST,
         });
 
         let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
@@ -118,6 +116,61 @@ export const createProduct = (productData) => async (dispatch) => {
     }
 }
 
+// Update Product
+export const updateProduct = (id,productData) => async (dispatch) => {
+    try {
+
+        dispatch({
+            type: UPDATE_PRODUCT_REQUEST,
+        });
+
+        const config = {
+            headers: { "Content-Type": "application/json" },
+        };
+
+        let link = `/api/v1/admin/product/${id}`;
+
+        const { data } = await axios.put(link, productData, config);
+
+        dispatch({
+            type: UPDATE_PRODUCT_SUCCESS,
+            payload: data.success,
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: UPDATE_PRODUCT_FAIL,
+            payload: err.response.data.message,
+        })
+    }
+}
+
+// Delete Product -- Admin
+export const deleteProduct = (id) => async (dispatch) => {
+    try {
+
+        dispatch({
+            type: DELETE_PRODUCT_REQUEST,
+        });
+
+
+        let link = `/api/v1/admin/product/${id}`;
+
+        const { data } = await axios.delete(link);
+
+        dispatch({
+            type: DELETE_PRODUCT_SUCCESS,
+            payload: data.success,
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: DELETE_PRODUCT_FAIL,
+            payload: err.response.data.message,
+        })
+    }
+}
+
 // Get Product Details
 export const getProductDetails = (id) => async (dispatch) => {
     try {
@@ -157,7 +210,7 @@ export const newReview = (reviewData) => async (dispatch) => {
 
         let link = `/api/v1/review`;
 
-        const { data } = await axios.put(link, reviewData,config);
+        const { data } = await axios.put(link, reviewData, config);
 
         dispatch({
             type: NEW_REVIEW_SUCCESS,
@@ -177,4 +230,4 @@ export const clearErrors = () => async (dispatch) => {
     dispatch({
         type: CLEAR_ERRORS,
     });
- }
+}

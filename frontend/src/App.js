@@ -29,6 +29,7 @@ import MyOrders from "./component/Order/MyOrders.js";
 import OrderDetails from "./component/Order/OrderDetails.js";
 import Dashboard from "./component/Admin/Dashboard.js";
 import ProductList from "./component/Admin/ProductList.js";
+import UpdateProduct from "./component/Admin/UpdateProduct.js";
 
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -108,6 +109,7 @@ function App() {
           <Route exact path="/admin/dashboard" element={<Dashboard />} />
           <Route exact path="/admin/products" element={<ProductList />} />
           <Route exact path="/admin/product" element={<NewProduct />} />
+          <Route exact path="/admin/product/:id" element={<UpdateProduct />} />
 
         </Route>
 
