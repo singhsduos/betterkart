@@ -16,10 +16,10 @@ import { Doughnut, Line } from "react-chartjs-2";
 
 import { useSelector, useDispatch } from "react-redux";
 import { getAdminProduct } from "../../actions/productAction";
-// import { getAllOrders } from "../../actions/orderAction.js";
-// import { getAllUsers } from "../../actions/userAction.js";
 import MetaData from "../layout/MetaData";
 import Sidebar from "./Sidebar.js";
+import { getAllOrders } from '../../actions/orderAction';
+import { getAllUsers } from '../../actions/userAction';
 import "./SCSS/Dashboard/Dashboard.css";
 
 ChartJS.register(
@@ -38,6 +38,8 @@ const Dashboard = () => {
     const dispatch = useDispatch();
 
     const { products } = useSelector((state) => state.products);
+    const { orders } = useSelector((state) => state.allOrders);
+    const { users } = useSelector((state) => state.allUsers);
 
 
     let outOfStock = 0;
@@ -50,6 +52,8 @@ const Dashboard = () => {
 
     useEffect(() => {
         dispatch(getAdminProduct());
+        dispatch(getAllOrders());
+        dispatch(getAllUsers());
     }, [dispatch]);
 
 
@@ -95,15 +99,15 @@ const Dashboard = () => {
                 <div className="dashboardSummaryBox2">
                     <Link to="/admin/products">
                         <p>Products</p>
-                        <p>{products.length}</p>
+                        <p>{products && products.length}</p>
                     </Link>
                     <Link to="/admin/orders">
                         <p>Orders</p>
-                        <p>4</p>
+                        <p>{orders && orders.length }</p>
                     </Link>
                     <Link to="/admin/users">
                         <p>Users</p>
-                        <p>4</p>
+                        <p>{users && users.length }</p>
                     </Link>
                 </div>
 

@@ -32,6 +32,8 @@ import ProductList from "./component/Admin/ProductList.js";
 import UpdateProduct from "./component/Admin/UpdateProduct.js";
 import OrderList from "./component/Admin/OrderList.js";
 import ProcessOrder from "./component/Admin/ProcessOrder.js";
+import UsersList from "./component/Admin/UsersList.js";
+import UpdateUser from "./component/Admin/UpdateUser.js";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -113,6 +115,8 @@ function App() {
           <Route exact path="/admin/product/:id" element={<UpdateProduct />} />
           <Route exact path="/admin/orders" element={<OrderList />} />
           <Route exact path="/admin/order/:id" element={<ProcessOrder />} />
+          <Route exact path="/admin/users" element={<UsersList />} />
+          <Route exact path="/admin/user/:id" element={<UpdateUser />} />
 
         </Route>
 
