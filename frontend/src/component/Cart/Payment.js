@@ -59,7 +59,7 @@ const Payment = () => {
             const config = {
                 headers: {
                     "Content-Type": "application/json",
-                    
+                    "Authorization": "Bearer sk_test_51KH86YSAuvW4eBNM8WqJp4qgzCh9ShUNwjI2jG8QpRufFvT8u9UJqTp9h1ax8mvorHgsMDEIDJ5mG4zLiYQIMRfa00aCoeBZlO" 
                 },
             };
             const { data } = await axios.post(

@@ -21,6 +21,7 @@ import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 import './SCSS/ProductDetails/ProductDetails.css';
 
+
 const ProductDetails = () => {
 
     const dispatch = useDispatch();
@@ -30,6 +31,20 @@ const ProductDetails = () => {
     const { success, error: reviewError } = useSelector(
         (state) => state.newReview
     );
+
+     // CSS and Values for Stars
+    const options = {
+        size: "large",
+        value: product.ratings,
+        readOnly: true,
+        precision: 0.5,
+    };
+
+    const [quantity, setQuantity] = useState(1);
+    const [open, setOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState("");
+
 
     // Get the userId param from the URL.
     const { id } = useParams();
@@ -42,18 +57,7 @@ const ProductDetails = () => {
         dispatch(getProductDetails(id));
     }, [dispatch, id, error, alert]);
 
-    // CSS and Values for Stars
-    const options = {
-        size: "large",
-        value: product.ratings,
-        readOnly: true,
-        precision: 0.5,
-    }
 
-    const [quantity, setQuantity] = useState(1);
-    const [open, setOpen] = useState(false);
-    const [rating, setRating] = useState(0);
-    const [comment, setComment] = useState("");
 
     const increaseQuantity = () => {
         // if stock is 5 then you can add value till 5 otherwise return it
@@ -91,6 +95,7 @@ const ProductDetails = () => {
         setOpen(false);
     };
 
+    
     useEffect(() => {
         if (error) {
             alert.error(error);
@@ -118,9 +123,13 @@ const ProductDetails = () => {
                         <Carousel>
                             {product.images &&
                                 product.images.map((item, i) => (
-                                    <img className='CarouselImage' src={item.url} key={i} alt={`${i} Slide`} />
-                                ))
-                            }
+                                    <img
+                                        className="CarouselImage"
+                                        key={i}
+                                        src={item.url}
+                                        alt={`${i} Slide`}
+                                    />
+                                ))}
                         </Carousel>
                     </div>
 
@@ -197,13 +206,16 @@ const ProductDetails = () => {
                         </Button>
                     </DialogActions>
                 </Dialog>
-                {
-                    product.reviews && product.reviews[0] ? (
-                        <div className="reviews">
-                            {product.reviews && product.reviews.map((review, i) => <ReviewCard review={review} key={i} />)}
-                        </div>
-                    ) : (<p className="noReviews">No Reviews Yet</p>)
-                }
+                {product.reviews && product.reviews[0] ? (
+                    <div className="reviews">
+                        {product.reviews &&
+                            product.reviews.map((review) => (
+                                <ReviewCard key={review._id} review={review} />
+                            ))}
+                    </div>
+                ) : (
+                    <p className="noReviews">No Reviews Yet</p>
+                )}
             </>)}
         </>
     )
