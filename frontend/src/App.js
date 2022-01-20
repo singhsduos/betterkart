@@ -13,6 +13,9 @@ import store from "./store";
 import { loadUser } from './actions/userAction';
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from 'axios';
 import ProtectedRoute from "./component/Route/ProtectedRoute.js";
 import AdminRoute from "./component/Route/AdminRoute.js";
 import Profile from "./component/User/Profile.js";
@@ -38,9 +41,6 @@ import NewProduct from './component/Admin/NewProduct';
 import Contact from './component/layout/Contact/Contact';
 import About from './component/layout/About/About';
 import NotFound from "./component/layout/NotFound/NotFound";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import axios from 'axios';
 
 
 function App() {
