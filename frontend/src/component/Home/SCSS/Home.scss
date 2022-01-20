@@ -10,7 +10,10 @@ $headingFont_family: "Roboto", Arial, sans-serif;
 }
 
 .banner {
-  background-image: $bg_color;
+  background-image: url("../../../images/cover.jfif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vmin;
   text-align: center;
   color: $mainText_color;
@@ -125,7 +128,8 @@ $headingFont_family: "Roboto", Arial, sans-serif;
     > .productPriceSpan {
       margin: 0.5vmax;
       color: tomato;
-      font: 600 1.7vmax "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font: 600 1.7vmax "Franklin Gothic Medium", "Arial Narrow", Arial,
+        sans-serif;
     }
 
     &:hover {
@@ -134,6 +138,14 @@ $headingFont_family: "Roboto", Arial, sans-serif;
     }
   }
 }
+
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
 
 @media screen and (max-width: 600px) {
   .banner {

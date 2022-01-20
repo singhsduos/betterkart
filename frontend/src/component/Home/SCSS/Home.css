@@ -1,6 +1,8 @@
 .banner {
-  background-image: -webkit-gradient(linear, left top, right top, from(#635dc0), to(#3027ae));
-  background-image: linear-gradient(to right, #635dc0, #3027ae);
+  background-image: url("../../../images/cover.jfif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vmin;
   text-align: center;
   color: white;
@@ -179,6 +181,12 @@
           transform: translateY(-1vmax);
 }
 
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
 @media screen and (max-width: 600px) {
   .banner p {
     font: 400 2.2vmax "Lucida Sans";
