@@ -7,7 +7,6 @@
   display: grid;
   -ms-grid-columns: 4fr 4fr;
       grid-template-columns: 4fr 4fr;
-  position: fixed;
 }
 
 .aboutSectionGradient {

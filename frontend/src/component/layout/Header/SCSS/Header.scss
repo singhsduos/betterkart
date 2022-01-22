@@ -1,15 +1,209 @@
-.speedDial{
-    position: fixed;
-    right: 3vmax;
-    top: 3vmax;
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top: 3vmax;
 
-    .speedDialIcon{
-        width: 56px;
-        height: 56px;
-        border-radius: 100%;
-    }
+  .speedDialIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+  }
 
-    .speedDialBtns:hover{
-        color: tomato;
-    }
+  .speedDialBtns:hover {
+    color: tomato;
+  }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap");
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* 
+ 
+/* navbar style start  */
+
+.main-nav {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all 0.5s ease 0s;
+}
+
+.open {
+  display: flex;
+  transition: all 0.5s ease 0s;
+}
+
+.close {
+  display: none;
+  transition: all 0.5s ease 0s;
+}
+
+.menuBurger {
+  width: 3vmax;
+  height: 2.5vmax;
+  position: fixed;
+  top: 2vmax;
+  left: 2vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1vmax;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.menuBurger a {
+  font-size: 3vmax;
+  color: black;
+}
+
+.menu-link {
+  width: 50%;
+}
+
+.menu-link ul {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-link ul div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media {
+  width: 25%;
+}
+
+.social-media ul {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media ul li {
+  text-align: right;
+}
+
+.social-media ul li:first-child {
+  grid-column: 2/3;
+}
+
+/* ----------- Grid part ends ----------------- */
+
+.logo {
+  width: 25%;
+}
+
+.logo img {
+  cursor: pointer;
+  width: 20vmax;
+  height: unset;
+  transition: all 0.5s ease 0s;
+  animation: 1s ease 0s 1 normal none running LogoleftIn;
+  filter: none;
+}
+
+.menu-link ul li {
+  font-size: 1.3vmax;
+  margin: 1rem;
+}
+
+.menu-link ul li a {
+  text-transform: capitalize;
+  color: rgba(0, 0, 3, 0.8);
+  transition: 0.5s;
+}
+.menu-link ul li:hover > a {
+  transform-origin: left;
+  color: rgba(0, 0, 3, 1);
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+.social-media ul li {
+  font-size: 1.8rem;
+  margin: 0.2rem;
+}
+
+.social-media .hamburger-menu {
+  display: none;
+}
+
+.facebook {
+  color: rgba(35, 35, 35, 0.8);
+  width: 3vmax;
+
+  &:hover {
+    color: tomato;
+  }
+}
+
+/* hero section   */
+
+.hero-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-section p {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.hero-section h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+
+@media (max-width: 800px) {
+  .menu-link ul li {
+    font-size: 2vmax !important;
+  }
+
+  .menu-link ul div {
+    flex-direction: column;
+  }
+
+  .social-media ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: -1rem;
+  }
+}
+

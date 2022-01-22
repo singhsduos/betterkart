@@ -277,6 +277,7 @@ body {
           justify-content: space-evenly;
   margin: 1vmax auto;
   padding: 3vmax;
+  margin-bottom: 2rem;
 }
 
 .reviewCard img {
@@ -297,6 +298,7 @@ body {
   color: rgba(0, 0, 0, 0.589);
   font: 500 1.3vmax "Gill Sans";
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 /*
