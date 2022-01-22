@@ -115,6 +115,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
         // if there is error than we already generated a these below token so it's duty define them as undefined
         user.resetPasswordToken = undefined;
         user.resetPasswordExpire = undefined;
+        console.log(error);
 
 
         // so again save these values in schema
@@ -126,6 +127,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
     }
 
 });
+
 
 //  Reset Password
 exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
