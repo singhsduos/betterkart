@@ -29,6 +29,12 @@ This is a ecommerce website offering a variety of products for customers to buy 
 [![MONGODB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
 ## ScreenShot
+![Screenshot_20220122_223223](https://user-images.githubusercontent.com/32032008/150648507-43b216f0-40b0-41c6-a8bf-e276439bf5af.png)
+![Screenshot_20220122_223320](https://user-images.githubusercontent.com/32032008/150648510-785d395b-58da-4df1-b1cc-43a49960eb86.png)
+![Screenshot_20220122_223355](https://user-images.githubusercontent.com/32032008/150648512-b3c82392-d255-4fdf-83f4-ed1aaf94b44e.png)
+![Screenshot_20220122_223450](https://user-images.githubusercontent.com/32032008/150648514-de42c95f-0047-442d-b620-657cb50414d0.png)
+![Screenshot_20220122_223524](https://user-images.githubusercontent.com/32032008/150648516-ea48a1a6-0b8b-42d3-9c0f-cfba49971b2a.png)
+![Screenshot_20220122_223720](https://user-images.githubusercontent.com/32032008/150648520-073e1961-1b0c-481d-8c07-4a00d4c0bd60.png)
 
 
 
